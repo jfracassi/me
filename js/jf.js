@@ -169,8 +169,8 @@ $(function() {
 	{
 		$('.main-landing').css('max-width','90%');
 		$('.needs_top_border_on_small').css('border-top-style','solid');
-		$('.myname').css('font-size','35pt');
-		$('.link-linkedin').css('margin-left','70px');
+		$('.myname').css('font-size','30pt');
+		$('.link-linkedin').css('margin-left','15px');
 	}
 	else
 	{
