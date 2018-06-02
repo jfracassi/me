@@ -169,11 +169,15 @@ $(function() {
 	{
 		$('.main-landing').css('max-width','90%');
 		$('.needs_top_border_on_small').css('border-top-style','solid');
+		$('.myname').css('font-size','35pt');
+		$('.link-linkedin').css('margin-left','70px');
 	}
 	else
 	{
 		$('.main-landing').css('max-width','80%');
 		$('.needs_top_border_on_small').css('border-top-style','none');
+		$('.myname').css('font-size','45pt');
+		$('.link-linkedin').css('margin-left','180px');
 	}
 	
 	$('#the_spinner').fadeIn(500, function() {
