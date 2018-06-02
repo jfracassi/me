@@ -99,14 +99,28 @@ function adjust_layout() {
 	var size_array = ['xs','sm','md','lg','xl'];
 		var screensize = getResponsiveBreakpoint();
 		
-		if (size_array.indexOf(screensize) < 2)
+		if (size_array.indexOf(screensize) < 2)	// on a mobile device
 		{
 			$('.main-landing').css('max-width','90%');
 			$('.needs_top_border_on_small').css('border-top-style','solid');
 			$('.myname').css('font-size','30pt');
 			$('.mytitle').css('font-size','15pt');
 			$('.link-linkedin').css('margin-left','75px');
-			$('.main-photo').css('height','175px');
+			
+			if (window.innerHeight < window.innerWidth)	// landscape on a mobile device
+			{
+				$('.main-photo').css('height','190px');
+				$('.main-photo-div').css('top','100%');
+				$('.main-photo-div').css('left','80%');
+				$('.main-info').css('top','-10%');
+			}
+			else
+			{
+				$('.main-photo').css('height','175px');
+				$('.main-photo-div').css('top','50%');
+				$('.main-photo-div').css('left','50%');
+				$('.main-info').css('top','45%');
+			}
 		}
 		else
 		{
@@ -116,6 +130,9 @@ function adjust_layout() {
 			$('.mytitle').css('font-size','20pt');
 			$('.link-linkedin').css('margin-left','180px');
 			$('.main-photo').css('height','225px');
+			$('.main-photo-div').css('top','50%');
+			$('.main-photo-div').css('left','50%');
+			$('.main-info').css('top','45%');
 		}
 }
 						
