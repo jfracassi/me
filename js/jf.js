@@ -116,7 +116,7 @@ function adjust_layout() {
 			}
 			else
 			{
-				$('.main-photo').css('height','190px');
+				$('.main-photo').css('height','200px');
 				$('.main-photo-div').css('top','50%');
 				$('.main-photo-div').css('left','50%');
 				$('.main-info').css('top','45%');
