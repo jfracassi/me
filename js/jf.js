@@ -170,14 +170,18 @@ $(function() {
 		$('.main-landing').css('max-width','90%');
 		$('.needs_top_border_on_small').css('border-top-style','solid');
 		$('.myname').css('font-size','30pt');
-		$('.link-linkedin').css('margin-left','15px');
+		$('.mytitle').css('font-size','15pt');
+		$('.link-linkedin').css('margin-left','75px');
+		$('.main-photo').css('height','175px');
 	}
 	else
 	{
 		$('.main-landing').css('max-width','80%');
 		$('.needs_top_border_on_small').css('border-top-style','none');
 		$('.myname').css('font-size','45pt');
+		$('.mytitle').css('font-size','20pt');
 		$('.link-linkedin').css('margin-left','180px');
+		$('.main-photo').css('height','225px');
 	}
 	
 	$('#the_spinner').fadeIn(500, function() {
