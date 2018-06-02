@@ -162,6 +162,20 @@ $(function() {
 		$('#skill_list').append(the_skill);
 	});
 	
+	var size_array = ['xs','sm','md','lg','xl'];
+	var screensize = getResponsiveBreakpoint();
+	
+	if (size_array.indexOf(screensize) < 2)
+	{
+		$('.main-landing').css('max-width','90%');
+		$('.needs_top_border_on_small').css('border-top-style','solid');
+	}
+	else
+	{
+		$('.main-landing').css('max-width','80%');
+		$('.needs_top_border_on_small').css('border-top-style','none');
+	}
+	
 	$('#the_spinner').fadeIn(500, function() {
 		$('#the_spinner').fadeOut(700, function() {
 			$('#the_page').fadeIn(700, function() {
