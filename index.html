@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/timeline.css" rel="stylesheet">
+		<link href="css/slide-up-fade-in.css" rel="stylesheet">
+		<link href="css/jf.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+		
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/moment.min.js"></script>
+		<script src="js/jf.js"></script>
+		
+		<title>Jeremy Fracassi - Full Stack Developer</title>
+	</head>
+	<body>
+		<div id='the_spinner' class='full-center' style='display:none;'><i class="fas fa-cog fa-10x fa-spin" style='color:white;'></i></div>
+		<div id='the_page' class="container-fluid text-light full-height" style='display:none;'>
+			<div class='row full-height main-bg'> <!-- here just for colour-divided background -->
+				<div class='col-lg-4 col-sm-12' style='background-color:#2b2a27;'>
+				</div>
+				<div class='col-lg-8 col-sm-12'>
+				</div>
+			</div>
+			<div class='container main-landing'>
+				<div class='row full-height'>
+					<div class='col-lg-4 col-sm-12'>
+						<div class='main-photo-div'><img id='main-photo' src="images/me.jpg" class="rounded-circle main-photo slide-up-fade-in colour-fade-in-out" style='display:none;'></div>
+					</div>
+					<div class='col-lg-8 col-sm-12 text-lg-left text-sm-center'>
+						<div class='main-info'>
+							<div class='row main-name'>
+								<span id='first-name' class='myname myname-first slide-up-fade-in' style='display:none;'>Jeremy</span>
+								<span id='last-name' class='myname myname-last slide-up-fade-in' style='display:none;'>Fracassi</span>
+							</div>
+							<div class='row sub-info'>
+								<span id='my-title' class='mytitle slide-up-fade-in' style='display:none;'>Full Stack Developer</span>
+								<a id='linkedin-link' class='link-linkedin slide-up-fade-in colour-fade-in-out' style='display:none;' target='_blank' href='https://ca.linkedin.com/in/jeremyfracassi'><i class="fab fa-linkedin fa-2x"></i></a>
+								<a id='github-link' class='link-github slide-up-fade-in colour-fade-in-out' style='display:none;' target='_blank' href='https://github.com/jfracassi'><i class="fab fa-github-square fa-2x"></i></a>
+							</div>
+							<div class='row location-info'>
+								<span id='my-location' class='mylocation slide-up-fade-in' style='display:none;'><i class="fas fa-map-marker"></i> Scarborough Ontario, Canada</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='row myinfo-row'>
+				<div class='myinfo myinfo-icon-div col-lg-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#292825;'>
+					<i id='intro-icon' class="fas fa-info-circle fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Intro</span>
+				</div>
+				<div class='myinfo col-lg-8 col-sm-12 text-lg-left text-sm-center' style='background-color:#2b2a27;'>
+					<div class='col-lg-9 col-sm-12'>
+						<h5 class='myinfo-content-heading colour-fade-in-out'>A Little About Me</h5>
+						<p>
+							I've always enjoyed creating. As a child, I made drawings (scribbles?) for anyone who would take them. As time went on, my skill with pencil and paper
+							improved. In high school, I became interested in computer programming, attracted by the ability to create new things with new tools.
+						</p>
+						<p>
+							While I appreciate all formats of programming, I felt drawn to web development. I enjoy the complexity that comes with full stack development: designing a
+							visually appealing front end, and designing a streamlined back end.
+						</p>
+						<p>
+							Lately, I've been doing a lot of work with custom ERP systems. Those artistic skills I developed turned out to be a good asset when it comes to making
+							interfaces that people need to stare at through their work day. I take pride in my work and look for inspiriation everywhere.
+						</p>
+						<p>
+							I keep busy and pick up new skills along the way.
+						</p>
+						<p>
+							I still draw from time to time.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class='row myinfo-row'>
+				<div class='myinfo myinfo-icon-div col-lg-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#2b2a27;'>
+					<i id='cog1' class="myinfo-icon fas fa-cog fa-2x"></i><i id='cog2' class="myinfo-icon2 fas fa-cog"></i><span class='myinfo-header colour-fade-in-out'>Skills</span>
+				</div>
+				<div class='myinfo myinfo-content col-lg-8 col-sm-12 text-lg-left text-sm-center'>
+					<div id='skill_list' class='col-lg-9 col-sm-12'>
+					</div>
+				</div>
+			</div>
+			<div class='row myinfo-row'>
+				<div class='myinfo myinfo-icon-div col-lg-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#292825;'>
+					<i id='work-icon' class="fas fa-briefcase fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Experience</span>
+				</div>
+				<div class='myinfo col-lg-8 col-sm-12 text-lg-left text-sm-left' style='background-color:#2b2a27;'>
+					<div class='col-lg-9 col-sm-12'>
+						<ul class='timeline'>
+							<li class='timeline-inverted'>
+								<div class="timeline-badge colour-fade-in-out"></div>
+								<div class="timeline-panel colour-fade-in-out">
+									<div class="timeline-heading colour-fade-in-out">
+										<small>April 2010 - Present &bull; Senior Full Stack Developer</small>
+										<h4 class="timeline-title">Gardien Services Canada</h4>
+									</div>
+									<div class="timeline-body">
+										<ul>
+											<li>Creating OnTrack 2.0 (still under development), features major enhancements over previous iteration
+												<ul>
+													<li>improved security</li>
+													<li>logging of every operator action and every database change query for full traceability</li>
+													<li>expired training will disqualify an operator from performing certain functions</li>
+													<li>LAMP setup</li>
+													<li>Front End:
+														<ul>
+															<li>Bootstrap</li>
+															<li>jQuery</li>
+															<li>JSON/AJAX</li>
+														</ul>
+													</li>
+													<li>Back End:
+														<ul>
+															<li>MySQL</li>
+															<li>PHP</li>
+															<li>CodeIgniter</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li>Maintain and enhance OnTrack, a complex web-based (LAMP) custom ERP system (PHP, MySQL, JavaScript)
+												<ul>
+													<li>Added multi-language support</li>
+													<li>Created new and update existing auto-generated certificates sent to customer in PDF format</li>
+													<li>Created functions to more accurately track job cycle-times</li>
+													<li>Created a report system that aggregates throughput and sales data from all 25 locations across 5 countries and generates graphs and charts for easy presentation</li>
+													<li>Created a system for administering and training recording results</li>
+													<li>Created a means to track annual and preventatitve maintenance and calibrations performed on equipment</li>
+												</ul>
+											</li>
+											<li>Created Perl scripts to automate time-consuming file archiving that was previously done manually</li>
+											<li>Maintain Gardien Customer Portal
+												<ul>
+													<li>Allows customers to log in and check on information and status of existing and previous jobs</li>
+												</ul>
+											</li>
+											<li>Created Gardien CRM site
+												<ul>
+													<li>Sales reps can keep track of any customer contact they've made</li>
+													<li>Ability for Sales reps to send out news letters to customer contacts</li>
+													<li>Ability for Customers to unsubscribe from news letters sent by Sales reps</li>
+													<li>Automatic reminders for Sales reps to follow up from previous contact</li>
+													<li>Tools for Management to keep track of global report data from OnTrack</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class='timeline-inverted'>
+								<div class="timeline-badge colour-fade-in-out"></div>
+								<div class="timeline-panel colour-fade-in-out">
+									<div class="timeline-heading colour-fade-in-out">
+										<small>February 2005 - October 2009 &bull; Full Stack Developer</small>
+										<h4 class="timeline-title">Coretec Inc</h4>
+									</div>
+									<div class="timeline-body">
+										<ul>
+											<li>Maintained and designed new features for an ASP/MSSQL web application for Front End Engineering department
+											<li>Created Perl scripts for Genesis (a CAM program used in the creation of PCBs)</li>
+											<li>Co-developed a program used to download drill programs to networked Excellon and Hitachi CNC drill machines (C#)</li>
+											<li>Designed and maintained GUI for CoreStack™, an Engineering program designed in-house used to plan stackups for PCBs (C#)</li>
+											<li>Maintained a Delphi-based rule set for Engenix (a program that generated instructions for PCB manufacturing), ensuring that it was always up to constantly improving standards</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class='timeline-inverted'>
+								<div class="timeline-badge colour-fade-in-out"></div>
+								<div class="timeline-panel colour-fade-in-out">
+									<div class="timeline-heading colour-fade-in-out">
+										<small>June 2003 - May 2004 &bull; Software Developer</small>
+										<h4 class="timeline-title">Cyrion Solutions / The CableShoppe Canada</h4>
+									</div>
+									<div class="timeline-body">
+										<ul>
+											<li>Designed multithreaded Test/Utility Ping program used to test responsiveness of multiple cable modems after repair (VB.Net)</li>
+											<li>Designed multithreaded Diagnostics Loader and Dumper for Scientific Atlanta cable TV set-top boxes (VB6)</li>
+											<li>Designed program to run an Automated Test Equipment station for Scientific Atlanta cable TV set-top Boxes which interacted with various pieces of test equipment through a serial GPIB connection (VB6)</li>
+											<li>Worked on a team debugging a networked database Inventory-Tracking Accounting package (VBA)</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							
+							<li class='timeline-inverted tl-more' style='display:none;'>
+								<div class="timeline-badge colour-fade-in-out"></div>
+								<div class="timeline-panel colour-fade-in-out">
+									<div class="timeline-heading colour-fade-in-out">
+										<small>Summer 2001 &bull; Signature Service Business Technician</small>
+										<h4 class="timeline-title">Bell Canada</h4>
+									</div>
+									<div class="timeline-body">
+										<ul>
+											<li>Bell Mobility module and IBM module data trouble call center – provided front line support to business customers experiencing technical difficulties and kept the customer up to date with progress reports</li>
+											<li>Weekend Dispatcher – assigned and dispatched field technicians to jobs during off-duty hours and logged progress resolution in the trouble ticket</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class='timeline-inverted tl-more' style='display:none;'>
+								<div class="timeline-badge colour-fade-in-out"></div>
+								<div class="timeline-panel colour-fade-in-out">
+									<div class="timeline-heading colour-fade-in-out">
+										<small>Summer 2000 &bull; ATM Operations Center Business Technician</small>
+										<h4 class="timeline-title">Bell Canada</h4>
+									</div>
+									<div class="timeline-body">
+										<ul>
+											<li>ATM provisioning – provisioned NewBridge and Cisco switches, Cisco routers and turned up ATM soft circuits</li>
+											<li>Hyperstream Testboard Controller – managed high volume of incoming calls to the Hyperstream Test Center</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class='timeline-inverted tl-more' style='display:none;'>
+								<div class="timeline-badge colour-fade-in-out"></div>
+								<div class="timeline-panel colour-fade-in-out">
+									<div class="timeline-heading colour-fade-in-out">
+										<small>Summer 1999 &bull; Extended Help Desk Business Technician</small>
+										<h4 class="timeline-title">Bell Canada</h4>
+									</div>
+									<div class="timeline-body">
+										<ul>
+											<li>Provided front line support to business customers experiencing technical difficulties and kept the customer up to date with progress reports during off hours</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<button id='btn-more' type="button" class="btn btn-outline-light">More</button>
+						<button id='btn-less' type="button" class="btn btn-outline-light" style='display:none;'>Less</button>
+					</div>
+				</div>
+			</div>
+			<div class='row myinfo-row'>
+				<div class='myinfo myinfo-icon-div col-lg-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#2b2a27;'>
+					<i id='edu-icon' class="fas fa-graduation-cap fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Education</span>
+				</div>
+				<div class='myinfo myinfo-content col-lg-8 col-sm-12 text-lg-left text-sm-center'>
+					<div class='col-lg-9 col-sm-12'>
+						<h4 class='myinfo-content-heading colour-fade-in-out'>
+							BSc Applied Computer Science
+							<br>
+							<small>Ryerson University - 2003</small>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

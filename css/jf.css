@@ -1,0 +1,283 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: #2d2c29;
+	/* for some reason, IE wants to show a horizontal scrollbar */
+	overflow-x: hidden;
+	/* scrollbar customization for IE */
+	scrollbar-base-color: #2b2a27;
+	scrollbar-face-color: #ffb600;
+	scrollbar-3dlight-color: #ffb600;
+	scrollbar-highlight-color: #ffb600;
+	scrollbar-track-color: #2b2a27;
+	scrollbar-arrow-color: #ffb600;
+	scrollbar-shadow-color: #ffb600;
+	scrollbar-dark-shadow-color: #ffb600;
+}
+
+/* scrollbar customization for Chrome */
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+ 
+body::-webkit-scrollbar-thumb {
+	background-color: #ffb600;
+	outline: 1px solid #ffffff;
+}
+
+a {
+	color: #aaaaaa;
+}
+
+a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.colour-fade-in-out {
+	-o-transition:color 1s ease-out, background 1s ease-in, border .5s ease-in;
+	-ms-transition:color 1s ease-out, background 1s ease-in, border .5s ease-in;
+	-moz-transition:color 1s ease-out, background 1s ease-in, border .5s ease-in;
+	-webkit-transition:color 1s ease-out, background 1s ease-in, border .5s ease-in;
+	/* ...and now override with proper CSS property */
+	transition:color 1s ease-out, background 1s ease-in, border .5s ease-in;
+}
+
+.full-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.full-height {
+	height: 100%;
+}
+
+.wobble {
+    -webkit-animation: wobble 1s linear;
+            animation: wobble 1s linear;
+}
+
+@-webkit-keyframes wobble {
+	10%, 90% {
+		-webkit-transform: rotate(10deg);
+				transform: rotate(10deg);
+	}
+	
+	20%, 80% {
+		-webkit-transform: rotate(-10deg);
+				transform: rotate(-10deg);
+	}
+	
+	30%, 50%, 70% {
+		-webkit-transform: rotate(15deg);
+				transform: rotate(15deg);
+	}
+	
+	40%, 60% {
+		-webkit-transform: rotate(-15deg);
+				transform: rotate(-15deg);
+	}
+}
+
+@keyframes wobble {
+	10%, 90% {
+		transform: rotate(10deg);
+	}
+	
+	20%, 80% {
+		transform: rotate(-10deg);
+	}
+	
+	30%, 50%, 70% {
+		transform: rotate(15deg);
+	}
+	
+	40%, 60% {
+		transform: rotate(-15deg);
+	}
+}
+
+.spin-reverse {
+    -webkit-animation: spin-reverse 2s infinite linear;
+            animation: spin-reverse 2s infinite linear;
+}
+
+@-webkit-keyframes spin-reverse {
+    0% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+    100% {
+        -webkit-transform: rotate(1deg);
+                transform: rotate(1deg);
+    }
+}
+
+@keyframes spin-reverse {
+    0% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+    100% {
+        -webkit-transform: rotate(1deg);
+                transform: rotate(1deg);
+    }
+}
+
+.link-github {
+	margin-left:5px;
+}
+
+.link-linkedin {
+	margin-left:180px;
+}
+
+.location-info {
+	position: absolute;
+	top: 150%;
+	margin: 0px;
+	
+	/* border-style: solid; */
+	/* border-color: red; */
+}
+
+.main-bg {
+	z-index: -1;
+}
+
+.main-info {
+	position: absolute;
+	top: 45%;
+	-moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+	
+	/* border-style: solid; */
+	/* border-color: white; */
+}
+
+.main-landing {
+	z-index: 1;
+	position: absolute;
+	height: 100%;
+	max-width:80%;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+	
+	/* border-style: solid; */
+	/* border-color: red; */
+}
+
+.main-name {
+	margin: 0px;
+	
+	/* border-style: solid; */
+	/* border-color: red; */
+}
+
+.main-photo {
+	padding: 5px;
+	height: 225px;
+	
+	border-style: solid;
+	border-color: #2b2a27;
+}
+
+.main-photo-div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.myinfo {
+	padding: 60px;
+	color: #aaaaaa;
+}
+
+.myinfo-content-heading {
+	color: #aaaaaa;
+}
+
+.myinfo-header {
+	margin-left: 10px;
+	padding-left: 10px;
+	font-size: 25pt;
+	/* font-weight: bold; */
+	text-transform: uppercase;
+	border-left-style: solid;
+	
+	color: #aaaaaa;
+}
+
+.myinfo-icon-div {
+	color: #aaaaaa;
+}
+
+.mylocation {
+	font-family: 'Questrial', sans-serif;
+	color: #aaaaaa;
+}
+
+.myname {
+	margin: 0px;
+	font-size: 45pt;
+	font-family: 'Questrial', sans-serif;
+	
+	/* border-style: solid; */
+	/* border-color: cyan; */
+}
+
+.myname-first {
+	color: #ffffff;
+}
+
+.myname-last {
+	text-transform: uppercase;
+	color: #ffb600;
+	font-weight: bold;
+	margin-left: 0px;
+}
+
+.myprogress {
+	height: 5px;
+	background-color: #555555;
+}
+
+.myprogress-bar {
+	background-color: #aaaaaa;
+}
+
+.mytitle {
+	font-size: 20pt;
+	font-family: 'Questrial', sans-serif;
+	color: #aaaaaa;
+}
+
+.skill-blurb {
+	margin-bottom: 35px;
+}
+
+.sub-info {
+	position: absolute;
+	/* top: 100%; */
+	margin: 0px;
+	
+	/* border-style: solid; */
+	/* border-color: magenta; */
+}
