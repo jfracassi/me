@@ -95,6 +95,30 @@ var skillset = {'php':{'label':'PHP',
 						'duration_end':moment("2003-06-30"),
 						'value':50}}
 
+function adjust_layout() {
+	var size_array = ['xs','sm','md','lg','xl'];
+		var screensize = getResponsiveBreakpoint();
+		
+		if (size_array.indexOf(screensize) < 2)
+		{
+			$('.main-landing').css('max-width','90%');
+			$('.needs_top_border_on_small').css('border-top-style','solid');
+			$('.myname').css('font-size','30pt');
+			$('.mytitle').css('font-size','15pt');
+			$('.link-linkedin').css('margin-left','75px');
+			$('.main-photo').css('height','175px');
+		}
+		else
+		{
+			$('.main-landing').css('max-width','80%');
+			$('.needs_top_border_on_small').css('border-top-style','none');
+			$('.myname').css('font-size','45pt');
+			$('.mytitle').css('font-size','20pt');
+			$('.link-linkedin').css('margin-left','180px');
+			$('.main-photo').css('height','225px');
+		}
+}
+						
 $(function() {
 	$('#skill_list').empty();
 	var right_now = moment();
@@ -162,27 +186,7 @@ $(function() {
 		$('#skill_list').append(the_skill);
 	});
 	
-	var size_array = ['xs','sm','md','lg','xl'];
-	var screensize = getResponsiveBreakpoint();
-	
-	if (size_array.indexOf(screensize) < 2)
-	{
-		$('.main-landing').css('max-width','90%');
-		$('.needs_top_border_on_small').css('border-top-style','solid');
-		$('.myname').css('font-size','30pt');
-		$('.mytitle').css('font-size','15pt');
-		$('.link-linkedin').css('margin-left','75px');
-		$('.main-photo').css('height','175px');
-	}
-	else
-	{
-		$('.main-landing').css('max-width','80%');
-		$('.needs_top_border_on_small').css('border-top-style','none');
-		$('.myname').css('font-size','45pt');
-		$('.mytitle').css('font-size','20pt');
-		$('.link-linkedin').css('margin-left','180px');
-		$('.main-photo').css('height','225px');
-	}
+	adjust_layout();
 	
 	$('#the_spinner').fadeIn(500, function() {
 		$('#the_spinner').fadeOut(700, function() {
@@ -255,4 +259,8 @@ $(function() {
 		$(this).find('#edu-icon').removeClass('wobble');
 	});
 		
+});
+
+$(window).resize(function () {
+	adjust_layout();
 });
