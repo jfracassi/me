@@ -113,6 +113,10 @@ function adjust_layout() {
 				$('.main-photo-div').css('top','100%');
 				$('.main-photo-div').css('left','80%');
 				$('.main-info').css('top','-10%');
+				
+				$('.skill-item').removeClass('col-sm-12');
+				$('.skill-item').addClass('col-sm-6');
+				$('.skill-item').addClass('col-xs-12');
 			}
 			else
 			{
@@ -120,6 +124,9 @@ function adjust_layout() {
 				$('.main-photo-div').css('top','50%');
 				$('.main-photo-div').css('left','50%');
 				$('.main-info').css('top','45%');
+				
+				$('.skill-item').addClass('col-sm-12');
+				$('.skill-item').removeClass('col-sm-6');
 			}
 		}
 		else
@@ -191,7 +198,7 @@ $(function() {
 		else
 			float_str = 'float-left';
 		
-		var the_skill = "<div class='col-lg-6 col-sm-12 " + float_str + "'>"
+		var the_skill = "<div class='skill-item col-lg-6 col-sm-12 " + float_str + "'>"
 						+ "<h5 class='myinfo-content-heading colour-fade-in-out'>" + skilldata['value'] + "% &bull; " + skilldata['label'] + "</h5>"
 						+ "<div class='progress myprogress colour-fade-in-out'>"
 						+ "<div id='progress-" + skill + "' class='progress-bar myprogress-bar colour-fade-in-out' role='progressbar' style='width: " + skilldata['value'] + "%;' aria-valuenow='" + skilldata['value'] + "' aria-valuemin='0' aria-valuemax='100'></div>"
