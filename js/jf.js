@@ -127,6 +127,7 @@ function adjust_layout() {
 				
 				$('.skill-item').addClass('col-sm-12');
 				$('.skill-item').removeClass('col-sm-6');
+				$('.skill-item').removeClass('col-xs-12');
 			}
 		}
 		else
