@@ -283,7 +283,12 @@ $(function() {
 		$(this).find('#work-icon').removeClass('wobble');
 		$(this).find('#edu-icon').removeClass('wobble');
 	});
-		
+	
+	$('.scroll-top-arrow').on('click', function() {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1000);
+	});
 });
 
 $(window).resize(function () {
