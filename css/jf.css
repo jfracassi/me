@@ -161,6 +161,7 @@ a:hover {
 	-moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+	width: 500px;
 	
 	/* border-style: solid; */
 	/* border-color: white; */
