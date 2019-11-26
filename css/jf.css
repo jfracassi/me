@@ -270,24 +270,8 @@ a:hover {
 	color: #aaaaaa;
 }
 
-.needs_top_border_on_small {
-	border-color: #2d2c29;
-	border-width: 5px;
-}
-
 .skill-blurb {
 	margin-bottom: 35px;
-}
-
-.scroll-top-arrow {
-	right: -30px;
-	border-top-style: solid;
-	border-width:2px;
-	float:right;
-}
-
-.scroll-top-arrow:hover {
-	cursor: pointer;
 }
 
 .sub-info {

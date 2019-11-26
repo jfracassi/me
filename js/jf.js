@@ -16,7 +16,7 @@ var skillset = {'php':{'label':'PHP',
 						'duration_start':moment("2013-01-01"),
 						'duration_end':moment(),
 						'value':90},
-				'css3':{'label':'CSS',
+				'css3':{'label':'CSS3',
 						'status':'',
 						'frequency':'Daily',
 						'duration_start':moment("2005-02-01"),
@@ -95,55 +95,6 @@ var skillset = {'php':{'label':'PHP',
 						'duration_end':moment("2003-06-30"),
 						'value':50}}
 
-function adjust_layout() {
-	var size_array = ['xs','sm','md','lg','xl'];
-		var screensize = getResponsiveBreakpoint();
-		
-		if (size_array.indexOf(screensize) < 2)	// on a mobile device
-		{
-			$('.main-landing').css('max-width','90%');
-			$('.needs_top_border_on_small').css('border-top-style','solid');
-			$('.myname').css('font-size','30pt');
-			$('.mytitle').css('font-size','15pt');
-			$('.link-linkedin').css('margin-left','75px');
-			
-			if (window.innerHeight < window.innerWidth)	// landscape on a mobile device
-			{
-				$('.main-photo').css('height','190px');
-				$('.main-photo-div').css('top','100%');
-				$('.main-photo-div').css('left','80%');
-				$('.main-info').css('top','-10%');
-				
-				$('.skill-item').removeClass('col-sm-12');
-				$('.skill-item').addClass('col-sm-6');
-				$('.skill-item').addClass('col-xs-12');
-			}
-			else
-			{
-				$('.main-photo').css('height','200px');
-				$('.main-photo-div').css('top','50%');
-				$('.main-photo-div').css('left','50%');
-				$('.main-info').css('top','45%');
-				
-				$('.skill-item').addClass('col-sm-12');
-				$('.skill-item').removeClass('col-sm-6');
-				$('.skill-item').removeClass('col-xs-12');
-			}
-		}
-		else
-		{
-			$('.main-landing').css('max-width','80%');
-			$('.needs_top_border_on_small').css('border-top-style','none');
-			$('.myname').css('font-size','45pt');
-			$('.mytitle').css('font-size','20pt');
-			$('.link-linkedin').css('margin-left','180px');
-			$('.main-photo').css('height','225px');
-			$('.main-photo-div').css('top','50%');
-			$('.main-photo-div').css('left','50%');
-			$('.main-info').css('top','45%');
-		}
-}
-						
 $(function() {
 	$('#skill_list').empty();
 	var right_now = moment();
@@ -199,7 +150,7 @@ $(function() {
 		else
 			float_str = 'float-left';
 		
-		var the_skill = "<div class='skill-item col-lg-6 col-sm-12 " + float_str + "'>"
+		var the_skill = "<div class='col-lg-6 col-sm-12 " + float_str + "'>"
 						+ "<h5 class='myinfo-content-heading colour-fade-in-out'>" + skilldata['value'] + "% &bull; " + skilldata['label'] + "</h5>"
 						+ "<div class='progress myprogress colour-fade-in-out'>"
 						+ "<div id='progress-" + skill + "' class='progress-bar myprogress-bar colour-fade-in-out' role='progressbar' style='width: " + skilldata['value'] + "%;' aria-valuenow='" + skilldata['value'] + "' aria-valuemin='0' aria-valuemax='100'></div>"
@@ -210,8 +161,6 @@ $(function() {
 						+ "</div>";
 		$('#skill_list').append(the_skill);
 	});
-	
-	adjust_layout();
 	
 	$('#the_spinner').fadeIn(500, function() {
 		$('#the_spinner').fadeOut(700, function() {
@@ -283,14 +232,5 @@ $(function() {
 		$(this).find('#work-icon').removeClass('wobble');
 		$(this).find('#edu-icon').removeClass('wobble');
 	});
-	
-	$('.scroll-top-arrow').on('click', function() {
-		$('html, body').animate({
-			scrollTop: 0
-		}, 1000);
-	});
-});
-
-$(window).resize(function () {
-	adjust_layout();
+		
 });
