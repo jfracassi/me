@@ -31,6 +31,12 @@ body::-webkit-scrollbar-thumb {
 	outline: 1px solid #ffffff;
 }
 
+/* scrollbar customization for FF */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #ffb600 #2b2a27;
+}
+
 a {
 	color: #aaaaaa;
 }
