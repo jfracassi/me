@@ -4,16 +4,40 @@ var skillset = {'php':{'label':'PHP',
 						'duration_start':moment("2010-04-01"),
 						'duration_end':moment(),
 						'value':95},
+				'ci':{'label':'CodeIgniter',
+						'status':'',
+						'frequency':'Daily',
+						'duration_start':moment("2013-01-01"),
+						'duration_end':moment(),
+						'value':95},
+				'sql':{'label':'MySQL / MSSQL',
+						'status':'',
+						'frequency':'Daily',
+						'duration_start':moment("2005-02-01"),
+						'duration_end':moment(),
+						'value':95},
 				'html':{'label':'HTML',
 						'status':'',
 						'frequency':'Daily',
 						'duration_start':moment("2005-02-01"),
 						'duration_end':moment(),
 						'value':95},
-				'ci':{'label':'CodeIgniter',
+				'js':{'label':'JavaScript',
+						'status':'',
+						'frequency':'Daily',
+						'duration_start':moment("2005-02-01"),
+						'duration_end':moment(),
+						'value':95},
+				'jquery':{'label':'jQuery',
 						'status':'',
 						'frequency':'Daily',
 						'duration_start':moment("2013-01-01"),
+						'duration_end':moment(),
+						'value':95},
+				'jsonajax':{'label':'JSON / AJAX',
+						'status':'',
+						'frequency':'Daily',
+						'duration_start':moment("2015-01-01"),
 						'duration_end':moment(),
 						'value':90},
 				'css3':{'label':'CSS',
@@ -28,72 +52,55 @@ var skillset = {'php':{'label':'PHP',
 						'duration_start':moment("2015-01-01"),
 						'duration_end':moment(),
 						'value':85},
-				'js':{'label':'JavaScript',
+				'powerbi':{'label':'Microsoft Power BI',
 						'status':'',
 						'frequency':'Daily',
-						'duration_start':moment("2005-02-01"),
-						'duration_end':moment(),
-						'value':95},
-				'jquery':{'label':'jQuery',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2013-01-01"),
-						'duration_end':moment(),
-						'value':90},
-				'jsonajax':{'label':'JSON / AJAX',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2015-01-01"),
+						'duration_start':moment("2020-11-01"),
 						'duration_end':moment(),
 						'value':85},
-				'sql':{'label':'MySQL / MSSQL',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2005-02-01"),
-						'duration_end':moment(),
-						'value':95},
-				'perl':{'label':'Perl / CGI',
-						'status':'',
-						'frequency':'Occasionally',
-						'duration_start':moment("2005-02-01"),
-						'duration_end':moment(),
-						'value':80},
 				'nix':{'label':'Linux / Unix',
 						'status':'',
 						'frequency':'Daily',
 						'duration_start':moment("2010-04-01"),
 						'duration_end':moment(),
 						'value':75},
-				'asp':{'label':'ASP',
+				'perl':{'label':'Perl / CGI',
 						'status':'',
-						'frequency':'Daily',
+						'frequency':'Occasionally',
+						'duration_start':moment("2005-02-01"),
+						'duration_end':moment(),
+						'value':75}};
+						
+var old_skillset = {'asp':{'label':'ASP',
+						'status':'',
+						// 'frequency':'Daily',
 						'duration_start':moment("2005-02-01"),
 						'duration_end':moment("2009-10-16"),
-						'value':60},
+						'value':50},
 				'csharp':{'label':'C#',
 						'status':'',
-						'frequency':'Daily',
+						// 'frequency':'Daily',
 						'duration_start':moment("2007-10-01"),
 						'duration_end':moment("2009-10-31"),
-						'value':60},
+						'value':50},
 				'vb':{'label':'Visual Basic',
 						'status':'',
-						'frequency':'Daily',
+						// 'frequency':'Daily',
 						'duration_start':moment("2002-06-01"),
 						'duration_end':moment("2004-05-31"),
-						'value':60},
+						'value':50},
 				'ccpp':{'label':'C / C++',
 						'status':'',
-						'frequency':'Daily',
+						// 'frequency':'Daily',
 						'duration_start':moment("1998-09-01"),
 						'duration_end':moment("2003-06-30"),
 						'value':50},
 				'java':{'label':'Java',
 						'status':'',
-						'frequency':'Daily',
+						// 'frequency':'Daily',
 						'duration_start':moment("1998-09-01"),
 						'duration_end':moment("2003-06-30"),
-						'value':50}}
+						'value':50}};
 
 function adjust_layout() {
 	var size_array = ['xs','sm','md','lg','xl'];
@@ -143,23 +150,24 @@ function adjust_layout() {
 			$('.main-info').css('top','45%');
 		}
 }
-						
-$(function() {
-	$('#skill_list').empty();
+
+function display_skills(skills_array)
+{
+	var float_str = 'float-left';
 	var right_now = moment();
 	var i = 0;
-	var float_str = 'float-left';
-	$.each(skillset, function(skill, skilldata) {
+	
+	$.each(skills_array, function(skill, skilldata) {
 		i++;
 		var yrs_str = '';
 		var yrs = skilldata['duration_end'].diff(skilldata['duration_start'], 'years', true);
 		
 		if (yrs % 1 == 0 && yrs >= 1) {
 			yrs_str = yrs;
-			if (yrs > 1)
-				yrs_str = yrs_str + ' years';
-			else
+			if (yrs == 1)
 				yrs_str = yrs_str + ' year';
+			else
+				yrs_str = yrs_str + ' years';
 		}
 		else {
 			var yr = skilldata['duration_end'].diff(skilldata['duration_start'], 'years');
@@ -171,19 +179,24 @@ $(function() {
 			}
 			if (yr > 0) {
 				yrs_str = yr;
-				if (yr > 1)
-					yrs_str = yrs_str + ' years';
-				else
+				if (yr == 1)
 					yrs_str = yrs_str + ' year';
-				
-				if (mth > 0) {
-					yrs_str = yrs_str + ' ' + mth;
-					if (mth > 1)
-						yrs_str = yrs_str + ' months';
-					else
-						yrs_str = yrs_str + ' month';
-				}
+				else
+					yrs_str = yrs_str + ' years';
 			}
+			
+			if (mth > 0) {
+				if (yrs_str != '')
+					yrs_str = yrs_str + ' ' + mth;
+				else
+					yrs_str = yrs_str + ' ' + mth;
+					
+				if (mth == 1)
+					yrs_str = yrs_str + ' month';
+				else
+					yrs_str = yrs_str + ' months';
+			}
+			
 			yrs_str = $.trim(yrs_str);
 		}
 		
@@ -191,7 +204,7 @@ $(function() {
 			skilldata['status'] = 'Status: Currently used<br>Duration: ' + yrs_str + '<br>Frequency: ' + skilldata['frequency'];
 		}
 		else {
-			skilldata['status'] = 'Status: Last used ' + skilldata['duration_end'].fromNow() + '<br>Duration: ' + yrs_str + '<br>Frequency: ' + skilldata['frequency'];
+			skilldata['status'] = 'Status: Last used ' + skilldata['duration_end'].fromNow() + '<br>Duration: ' + yrs_str; // + '<br>Frequency: ' + skilldata['frequency'];
 		}
 		
 		if (i % 2 == 0)
@@ -210,6 +223,16 @@ $(function() {
 						+ "</div>";
 		$('#skill_list').append(the_skill);
 	});
+}
+
+$(function() {
+	$('#skill_list').empty();
+	
+	display_skills(skillset);
+	
+	$('#skill_list').append("<div class='skill-item col-sm-12'><h5 class='myhr-heading colour-fade-in-out col-sm-12'><span>Rusty Skills<span><h5></div>");
+	
+	display_skills(old_skillset);
 	
 	adjust_layout();
 	
@@ -262,6 +285,7 @@ $(function() {
 		$(this).find('.timeline-panel').addClass('changed');
 		$(this).find('.myinfo-content-heading').css({'color': '#ffffff'});
 		$(this).find('.myprogress-bar').css({'background-color': '#ffb600'});
+		$(this).find('.myhr-heading').css({'color': '#ffffff'});
 		$(this).find('#intro-icon').addClass('wobble');
 		$(this).find('#cog1').addClass('fa-spin');
 		$(this).find('#cog2').addClass('spin-reverse');
@@ -277,6 +301,7 @@ $(function() {
 		$(this).find('.timeline-panel').removeClass('changed');
 		$(this).find('.myinfo-content-heading').css({'color': '#aaaaaa'});
 		$(this).find('.myprogress-bar').css({'background-color': '#aaaaaa'});
+		$(this).find('.myhr-heading').css({'color': '#aaaaaa'});
 		$(this).find('#intro-icon').removeClass('wobble');
 		$(this).find('#cog1').removeClass('fa-spin');
 		$(this).find('#cog2').removeClass('spin-reverse');

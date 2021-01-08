@@ -261,6 +261,35 @@ a:hover {
 	margin-left: 0px;
 }
 
+.myhr-heading {
+	padding-top: 50px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.myhr-heading > span{
+	position: relative;
+	display: inline-block;
+}
+
+.myhr-heading > span:before,
+.myhr-heading > span:after {
+	content: '';
+	position: absolute;
+	top: 40%;
+	border-bottom: 2px solid;
+	width: 100vw;
+	margin: 0 20px;
+}
+
+.myhr-heading > span:before{
+	right: 100%;
+}
+
+.myhr-heading > span:after{
+	left: 100%;
+}
+
 .myprogress {
 	height: 5px;
 	background-color: #555555;
