@@ -151,8 +151,7 @@ function adjust_layout() {
 		}
 }
 
-function display_skills(skills_array)
-{
+function display_skills(skills_array) {
 	var float_str = 'float-left';
 	var right_now = moment();
 	var i = 0;
@@ -309,12 +308,22 @@ $(function() {
 		$(this).find('#edu-icon').removeClass('wobble');
 	});
 	
-	$('.scroll-top-arrow').on('click', function() {
+	$('.scroll-top').on('click', function() {
 		$('html, body').animate({
 			scrollTop: 0
 		}, 1000);
 	});
+	
+	$('.nav-link').on('click', function(){
+		$('#navbarToggler').collapse('hide');
+	});
 });
+
+function scroll_to(id) {
+    $('html, body').animate({
+        scrollTop: $('#' + id).offset().top
+    }, 1000);
+}
 
 $(window).resize(function () {
 	adjust_layout();

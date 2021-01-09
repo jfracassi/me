@@ -25,6 +25,30 @@
 	<body>
 		<div id='the_spinner' class='full-center' style='display:none;'><i class="fas fa-cog fa-10x fa-spin" style='color:white;'></i></div>
 		<div id='the_page' class="container-fluid text-light full-height" style='display:none;'>
+			<nav class="navbar fixed-top navbar-dark" style='background-color:#2b2a27;'>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarToggler">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<span class="nav-link scroll-top" style='cursor:pointer;'><table><tbody><tr><td style='width:40px;text-align:center;'><i class="fas fa-arrow-up"></i></td><td>Top</td></tr></tbody></table></span>
+						</li>
+						<li class="nav-item">
+							<span class="nav-link" style='cursor:pointer;' onClick="javascript:scroll_to('intro-row');"><table><tbody><tr><td style='width:40px;text-align:center;'><i class="fas fa-info-circle"></i></td><td>Info</td></tr></tbody></table></span>
+						</li>
+						<li class="nav-item">
+							<span class="nav-link" style='cursor:pointer;' onClick="javascript:scroll_to('skills-row');"><table><tbody><tr><td style='width:40px;text-align:center;'><i id='cog1' class="myinfo-icon fas fa-cog"></i><i id='cog2' class="myinfo-icon2 fas fa-cog fa-xs"></i></td><td>Skills</td></tr></tbody></table></span>
+						</li>
+						<li class="nav-item">
+							<span class="nav-link" style='cursor:pointer;' onClick="javascript:scroll_to('experience-row');"><table><tbody><tr><td style='width:40px;text-align:center;'><i class="fas fa-briefcase"></i></td><td>Experience</td></tr></tbody></table></span>
+						</li>
+						<li class="nav-item">
+							<span class="nav-link" style='cursor:pointer;' onClick="javascript:scroll_to('education-row');"><table><tbody><tr><td style='width:40px;text-align:center;'><i class="fas fa-graduation-cap"></i></td><td>Education</td></tr></tbody></table></span>
+						</li>
+					</ul>
+				</div>
+			</nav>
 			<div class='row full-height main-bg'> <!-- here just for colour-divided background -->
 				<div class='col-lg-4 col-sm-12' style='background-color:#2b2a27;'>
 				</div>
@@ -54,13 +78,12 @@
 					</div>
 				</div>
 			</div>
-			<div class='row myinfo-row'>
+			<div id='intro-row' class='row myinfo-row'>
 				<div class='myinfo myinfo-icon-div col-lg-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#292825;'>
 					<i id='intro-icon' class="fas fa-info-circle fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Intro</span>
-					<!-- <sup class='scroll-top-arrow'><i class="fas fa-arrow-up"></i></sup> -->
 				</div>
 				<div class='myinfo col-lg-8 col-sm-12 text-lg-left text-sm-left' style='background-color:#2b2a27;'>
-					<sup class='scroll-top-arrow myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
+					<sup class='scroll-top-arrow scroll-top myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
 					<div class='col-lg-9 col-sm-12'>
 						<h5 class='myinfo-content-heading colour-fade-in-out'>
 							A Little About Me
@@ -86,22 +109,22 @@
 					</div>
 				</div>
 			</div>
-			<div class='row myinfo-row needs_top_border_on_small'>
+			<div id='skills-row' class='row myinfo-row needs_top_border_on_small'>
 				<div class='myinfo myinfo-icon-div col-lg-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#2b2a27;'>
 					<i id='cog1' class="myinfo-icon fas fa-cog fa-2x"></i><i id='cog2' class="myinfo-icon2 fas fa-cog"></i><span class='myinfo-header colour-fade-in-out'>Skills</span>
 				</div>
 				<div class='myinfo myinfo-content col-lg-8 col-sm-12 text-lg-left text-sm-left'>
-					<sup class='scroll-top-arrow myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
+					<sup class='scroll-top-arrow scroll-top myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
 					<div id='skill_list' class='col-lg-9 col-sm-12'>
 					</div>
 				</div>
 			</div>
-			<div class='row myinfo-row'>
+			<div id='experience-row' class='row myinfo-row'>
 				<div class='myinfo myinfo-icon-div col-lg-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#292825;'>
 					<i id='work-icon' class="fas fa-briefcase fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Experience</span>
 				</div>
 				<div class='myinfo col-lg-8 col-sm-12 text-lg-left text-sm-left' style='background-color:#2b2a27;'>
-					<sup class='scroll-top-arrow myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
+					<sup class='scroll-top-arrow scroll-top myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
 					<div class='col-lg-9 col-sm-12'>
 						<ul class='timeline'>
 							<li class='timeline-inverted'>
@@ -257,12 +280,12 @@
 					</div>
 				</div>
 			</div>
-			<div class='row myinfo-row needs_top_border_on_small'>
+			<div id='education-row' class='row myinfo-row needs_top_border_on_small'>
 				<div class='myinfo myinfo-icon-div col-lg-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#2b2a27;'>
 					<i id='edu-icon' class="fas fa-graduation-cap fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Education</span>
 				</div>
 				<div class='myinfo myinfo-content col-lg-8 col-sm-12 text-lg-left text-sm-center'>
-					<sup class='scroll-top-arrow myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
+					<sup class='scroll-top-arrow scroll-top myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
 					<div class='col-lg-9 col-sm-12'>
 						<h4 class='myinfo-content-heading colour-fade-in-out'>
 							BSc Applied Computer Science
