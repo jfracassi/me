@@ -248,6 +248,9 @@ function display_skills(skills_array) {
 }
 
 $(function() {
+	
+	alert($(window).width() + ' x ' + $(window).height());
+	
 	$('#skill_list').empty();
 	
 	display_skills(skillset);
