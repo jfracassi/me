@@ -346,6 +346,8 @@ function scroll_to(id) {
     $('html, body').animate({
         scrollTop: $('#' + id).offset().top
     }, 1000);
+	$('.myinfo-row').trigger('mouseout');
+	$('#' + id).trigger('mouseover');
 }
 
 $(window).resize(function () {
