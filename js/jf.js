@@ -115,6 +115,7 @@ function adjust_layout() {
 		$('.needs_top_border_on_small').css('border-top-style','solid');
 		$('.myname').css('font-size','30pt');
 		$('.mytitle').css('font-size','15pt');
+		$('.myinfo-header').css('font-size','25pt');
 		$('.link-linkedin').css('margin-left','75px');
 		
 		if (window.innerHeight < window.innerWidth)	// landscape on a mobile device
@@ -148,6 +149,7 @@ function adjust_layout() {
 		$('.main-landing').css('max-width','90%');
 		$('.myname').css('font-size','30pt');
 		$('.mytitle').css('font-size','15pt');
+		$('.myinfo-header').css('font-size','20pt');
 		$('.link-linkedin').css('margin-left','75px');
 		
 		$('.main-photo').css('height','190px');
@@ -155,8 +157,8 @@ function adjust_layout() {
 		$('.main-photo-div').css('left','50%');
 		$('.main-info').css('padding-left','20px');
 		$('.main-info').css('top','40%');
-		$('.myinfo-icon-div').css('padding-right','20px');
-		$('.myinfo-icon-div').css('padding-left','20px');
+		$('.myinfo-icon-div').css('padding-right','10px');
+		$('.myinfo-icon-div').css('padding-left','10px');
 	}
 	else
 	{
@@ -164,6 +166,7 @@ function adjust_layout() {
 		$('.needs_top_border_on_small').css('border-top-style','none');
 		$('.myname').css('font-size','45pt');
 		$('.mytitle').css('font-size','20pt');
+		$('.myinfo-header').css('font-size','25pt');
 		$('.link-linkedin').css('margin-left','180px');
 		$('.main-photo').css('height','225px');
 		$('.main-photo-div').css('top','50%');
