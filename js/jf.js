@@ -102,6 +102,8 @@ var old_skillset = {'asp':{'label':'ASP',
 						'duration_end':moment("2003-06-30"),
 						'value':50}};
 
+var nav_height = 0;
+
 function adjust_layout() {
 	var size_array = ['xs','sm','md','lg','xl'];
 	var screensize = getResponsiveBreakpoint();
@@ -346,11 +348,13 @@ $(function() {
 	$('.nav-link').on('click', function(){
 		$('#navbarToggler').collapse('hide');
 	});
+	
+	nav_height = $('#the-nav').outerHeight();
 });
 
 function scroll_to(id) {
     $('html, body').animate({
-        scrollTop: $('#' + id).offset().top
+        scrollTop: $('#' + id).offset().top - nav_height
     }, 1000, function() {
 		$('.myinfo-row').trigger('mouseout');
 		$('#' + id).trigger('mouseover');
@@ -359,4 +363,27 @@ function scroll_to(id) {
 
 $(window).resize(function () {
 	adjust_layout();
+});
+
+$(window).on('scroll', function(e) {
+	let pos = $(this).scrollTop() + nav_height;
+	
+	$('.myinfo-icon-div').each(function() {
+		if (pos > $(this).offset().top)
+		{
+			let curOffset_top = $(this).find('.myinfo-icon-span').offset().top - $(document).scrollTop();
+			let curOffset_left = $(this).find('.myinfo-icon-span').offset().left;
+			$(this).find('.myinfo-icon-span').css({
+									position: 'fixed',
+									top: curOffset_top,
+									left: curOffset_left
+			});
+		}
+		else
+			$(this).find('.myinfo-icon-span').css({
+									position: '',
+									top: '',
+									left: ''
+			});
+	});
 });

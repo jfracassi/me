@@ -25,7 +25,7 @@
 	<body>
 		<div id='the_spinner' class='full-center' style='display:none;'><i class="fas fa-cog fa-10x fa-spin" style='color:white;'></i></div>
 		<div id='the_page' class="container-fluid text-light full-height" style='display:none;'>
-			<nav class="navbar fixed-top navbar-dark" style='background-color:#2b2a27;'>
+			<nav id='the-nav' class="navbar fixed-top navbar-dark" style='background-color:#2b2a27;'>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fas fa-bars"></i>
 				</button>
@@ -80,7 +80,7 @@
 			</div>
 			<div id='intro-row' class='row myinfo-row'>
 				<div class='myinfo myinfo-icon-div col-lg-4 col-md-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#292825;'>
-					<i id='intro-icon' class="fas fa-info-circle fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Intro</span>
+					<span id='intro-span' class='myinfo-icon-span'><i id='intro-icon' class="fas fa-info-circle fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Intro</span></span>
 				</div>
 				<div class='myinfo col-lg-8 col-md-8 col-sm-12 text-lg-left text-sm-left' style='background-color:#2b2a27;'>
 					<sup class='scroll-top-arrow scroll-top myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
@@ -97,7 +97,7 @@
 							visually appealing front end, and designing a streamlined back end.
 						</p>
 						<p>
-							Lately, I've been doing a lot of work with custom ERP systems. Those artistic skills I developed turned out to be a good asset when it comes to making
+							Lately, I've been doing a lot of work with custom MES/ERP systems. Those artistic skills I developed turned out to be a good asset when it comes to making
 							interfaces that people need to stare at through their work day. I take pride in my work and look for inspiriation everywhere.
 						</p>
 						<p>
@@ -111,7 +111,7 @@
 			</div>
 			<div id='skills-row' class='row myinfo-row needs_top_border_on_small'>
 				<div class='myinfo myinfo-icon-div col-lg-4 col-md-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#2b2a27;'>
-					<i id='cog1' class="myinfo-icon fas fa-cog fa-2x"></i><i id='cog2' class="myinfo-icon2 fas fa-cog"></i><span class='myinfo-header colour-fade-in-out'>Skills</span>
+					<span id='skill-span' class='myinfo-icon-span'><i id='cog1' class="myinfo-icon fas fa-cog fa-2x"></i><i id='cog2' class="myinfo-icon2 fas fa-cog"></i><span class='myinfo-header colour-fade-in-out'>Skills</span></span>
 				</div>
 				<div class='myinfo myinfo-content col-lg-8 col-md-8 col-sm-12 text-lg-left text-sm-left'>
 					<sup class='scroll-top-arrow scroll-top myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
@@ -121,7 +121,7 @@
 			</div>
 			<div id='experience-row' class='row myinfo-row'>
 				<div class='myinfo myinfo-icon-div col-lg-4 col-md-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#292825;'>
-					<i id='work-icon' class="fas fa-briefcase fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Experience</span>
+					<span id='exp-span' class='myinfo-icon-span'><i id='work-icon' class="fas fa-briefcase fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Experience</span></span>
 				</div>
 				<div class='myinfo col-lg-8 col-md-8 col-sm-12 text-lg-left text-sm-left' style='background-color:#2b2a27;'>
 					<sup class='scroll-top-arrow scroll-top myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
@@ -282,7 +282,7 @@
 			</div>
 			<div id='education-row' class='row myinfo-row needs_top_border_on_small'>
 				<div class='myinfo myinfo-icon-div col-lg-4 col-md-4 col-sm-12 text-lg-right text-sm-center colour-fade-in-out' style='background-color:#2b2a27;'>
-					<i id='edu-icon' class="fas fa-graduation-cap fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Education</span>
+					<span id='edu-span' class='myinfo-icon-span'><i id='edu-icon' class="fas fa-graduation-cap fa-2x"></i><span class='myinfo-header colour-fade-in-out'>Education</span></span>
 				</div>
 				<div class='myinfo myinfo-content col-lg-8 col-md-8 col-sm-12 text-lg-left text-sm-center'>
 					<sup class='scroll-top-arrow scroll-top myinfo-content-heading colour-fade-in-out'><i class="fas fa-arrow-up"></i></sup>
