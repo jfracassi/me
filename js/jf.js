@@ -366,24 +366,30 @@ $(window).resize(function () {
 });
 
 $(window).on('scroll', function(e) {
+	let size_array = ['xs','sm','md','lg','xl'];
+	let screensize = getResponsiveBreakpoint();
+	
 	let pos = $(this).scrollTop() + nav_height;
 	
 	$('.myinfo-icon-div').each(function() {
-		if (pos > $(this).offset().top)
+		if (size_array.indexOf(screensize) >=2 || (size_array.indexOf(screensize) < 2 && window.innerHeight < window.innerWidth))
 		{
-			let curOffset_top = $(this).find('.myinfo-icon-span').offset().top - $(document).scrollTop();
-			let curOffset_left = $(this).find('.myinfo-icon-span').offset().left;
-			$(this).find('.myinfo-icon-span').css({
-									position: 'fixed',
-									top: curOffset_top,
-									left: curOffset_left
-			});
+			if (pos > $(this).offset().top)
+			{
+				let curOffset_top = $(this).find('.myinfo-icon-span').offset().top - $(document).scrollTop();
+				let curOffset_left = $(this).find('.myinfo-icon-span').offset().left;
+				$(this).find('.myinfo-icon-span').css({
+										position: 'fixed',
+										top: curOffset_top,
+										left: curOffset_left
+				});
+			}
+			else
+				$(this).find('.myinfo-icon-span').css({
+										position: '',
+										top: '',
+										left: ''
+				});
 		}
-		else
-			$(this).find('.myinfo-icon-span').css({
-									position: '',
-									top: '',
-									left: ''
-			});
 	});
 });
