@@ -1,106 +1,155 @@
-var skillset = {'php':{'label':'PHP',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2010-04-01"),
-						'duration_end':moment(),
-						'value':95},
-				'sql':{'label':'MySQL / MSSQL',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2005-02-01"),
-						'duration_end':moment(),
-						'value':95},
-				'html':{'label':'HTML',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2005-02-01"),
-						'duration_end':moment(),
-						'value':95},
-				'js':{'label':'JavaScript',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2005-02-01"),
-						'duration_end':moment(),
-						'value':95},
-				'jquery':{'label':'jQuery',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2013-01-01"),
-						'duration_end':moment(),
-						'value':95},
-				'jsonajax':{'label':'JSON / AJAX',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2015-01-01"),
-						'duration_end':moment(),
-						'value':90},
-				'css3':{'label':'CSS',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2005-02-01"),
-						'duration_end':moment(),
-						'value':85},
-				'nix':{'label':'Linux / Unix',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2010-04-01"),
-						'duration_end':moment(),
-						'value':75},
-				'ci':{'label':'CodeIgniter',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2013-01-01"),
-						'duration_end':moment("2021-11-19"),
-						'value':95},
-				'bootstrap':{'label':'Bootstrap',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2015-01-01"),
-						'duration_end':moment("2021-11-19"),
-						'value':85},
-				'powerbi':{'label':'Microsoft Power BI',
-						'status':'',
-						'frequency':'Daily',
-						'duration_start':moment("2020-11-01"),
-						'duration_end':moment("2021-11-19"),
-						'value':85},
-				'perl':{'label':'Perl / CGI',
-						'status':'',
-						'frequency':'Occasionally',
-						'duration_start':moment("2005-02-01"),
-						'duration_end':moment("2021-11-19"),
-						'value':75}};
+var new_skillset = {
+	'python':{
+		'label':'Python',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2023-12-18"),
+		'duration_end':moment(),
+		'value':70
+	}
+}
+
+var skillset = {
+	'php': {
+		'label':'PHP',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2010-04-01"),
+		'duration_end':moment("2023-12-15"),
+		'value':95
+	},
+	'sql': {
+		'label':'MySQL / MSSQL',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2005-02-01"),
+		'duration_end':moment("2023-12-15"),
+		'value':95
+	},
+	'html': {
+		'label':'HTML',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2005-02-01"),
+		'duration_end':moment("2023-12-15"),
+		'value':95
+	},
+	'js': {
+		'label':'JavaScript',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2005-02-01"),
+		'duration_end':moment("2023-12-15"),
+		'value':95
+	},
+	'jquery': {
+		'label':'jQuery',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2013-01-01"),
+		'duration_end':moment("2023-12-15"),
+		'value':95
+	},
+	'jsonajax': {
+		'label':'JSON / AJAX',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2015-01-01"),
+		'duration_end':moment("2023-12-15"),
+		'value':90
+	},
+	'css3': {
+		'label':'CSS',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2005-02-01"),
+		'duration_end':moment("2023-12-15"),
+		'value':85
+	},
+	'nix': {
+		'label':'Linux / Unix',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2010-04-01"),
+		'duration_end':moment("2023-12-15"),
+		'value':75
+	},
+	'ci': {
+		'label':'CodeIgniter',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2013-01-01"),
+		'duration_end':moment("2021-11-19"),
+		'value':95
+	},
+	'bootstrap': {
+		'label':'Bootstrap',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2015-01-01"),
+		'duration_end':moment("2021-11-19"),
+		'value':85
+	},
+	'powerbi': {
+		'label':'Microsoft Power BI',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2020-11-01"),
+		'duration_end':moment("2021-11-19"),
+		'value':75
+	},
+	'perl': {
+		'label':'Perl',
+		'status':'',
+		'frequency':'Occasionally',
+		'duration_start':moment("2005-02-01"),
+		'duration_end':moment("2021-11-19"),
+		'value':75
+	}
+};
 						
-var old_skillset = {'asp':{'label':'ASP',
-						'status':'',
-						// 'frequency':'Daily',
-						'duration_start':moment("2005-02-01"),
-						'duration_end':moment("2009-10-16"),
-						'value':50},
-				'csharp':{'label':'C#',
-						'status':'',
-						// 'frequency':'Daily',
-						'duration_start':moment("2007-10-01"),
-						'duration_end':moment("2009-10-31"),
-						'value':50},
-				'vb':{'label':'Visual Basic',
-						'status':'',
-						// 'frequency':'Daily',
-						'duration_start':moment("2002-06-01"),
-						'duration_end':moment("2004-05-31"),
-						'value':50},
-				'ccpp':{'label':'C / C++',
-						'status':'',
-						// 'frequency':'Daily',
-						'duration_start':moment("1998-09-01"),
-						'duration_end':moment("2003-06-30"),
-						'value':50},
-				'java':{'label':'Java',
-						'status':'',
-						// 'frequency':'Daily',
-						'duration_start':moment("1998-09-01"),
-						'duration_end':moment("2003-06-30"),
-						'value':50}};
+var old_skillset = {
+	'asp': {
+		'label':'ASP',
+		'status':'',
+		// 'frequency':'Daily',
+		'duration_start':moment("2005-02-01"),
+		'duration_end':moment("2009-10-16"),
+		'value':40
+	},
+	'csharp': {
+		'label':'C#',
+		'status':'',
+		// 'frequency':'Daily',
+		'duration_start':moment("2007-10-01"),
+		'duration_end':moment("2009-10-31"),
+		'value':40
+	},
+	'vb': {
+		'label':'Visual Basic',
+		'status':'',
+		// 'frequency':'Daily',
+		'duration_start':moment("2002-06-01"),
+		'duration_end':moment("2004-05-31"),
+		'value':35
+	},
+	'ccpp': {
+		'label':'C / C++',
+		'status':'',
+		// 'frequency':'Daily',
+		'duration_start':moment("1998-09-01"),
+		'duration_end':moment("2003-06-30"),
+		'value':25
+	},
+	'java': {
+		'label':'Java',
+		'status':'',
+		// 'frequency':'Daily',
+		'duration_start':moment("1998-09-01"),
+		'duration_end':moment("2003-06-30"),
+		'value':15
+	}
+};
 
 var nav_height = 0;
 
@@ -252,6 +301,16 @@ function display_skills(skills_array) {
 	});
 }
 
+function show_details(section) {
+	$('#' + section + '_summary').slideDown();
+	$('#' + section + '_detailed').slideUp();
+}
+
+function hide_details(section) {
+	$('#' + section + '_summary').slideUp();
+	$('#' + section + '_detailed').slideDown();
+}
+
 $(function() {
 	
 	// alert($(window).width() + ' x ' + $(window).height());
@@ -259,7 +318,11 @@ $(function() {
 	$('#skill_list').empty();
 	
 	display_skills(skillset);
+
+	$('#skill_list').append("<div class='skill-item col-sm-12'><h5 class='myhr-heading colour-fade-in-out col-sm-12'><span>New Skills<span><h5></div>");
 	
+	display_skills(new_skillset);
+
 	$('#skill_list').append("<div class='skill-item col-sm-12'><h5 class='myhr-heading colour-fade-in-out col-sm-12'><span>Older Skills<span><h5></div>");
 	
 	display_skills(old_skillset);
