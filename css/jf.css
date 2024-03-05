@@ -14,7 +14,7 @@ body {
 	scrollbar-track-color: #2b2a27;
 	scrollbar-arrow-color: #ffb600;
 	scrollbar-shadow-color: #ffb600;
-	scrollbar-dark-shadow-color: #ffb600;
+	/* scrollbar-dark-shadow-color: #ffb600; */
 }
 
 /* scrollbar customization for Chrome */

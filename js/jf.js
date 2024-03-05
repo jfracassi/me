@@ -319,11 +319,11 @@ $(function() {
 	
 	display_skills(skillset);
 
-	$('#skill_list').append("<div class='skill-item col-sm-12'><h5 class='myhr-heading colour-fade-in-out col-sm-12'><span>New Skills<span><h5></div>");
+	$('#skill_list').append("<div class='skill-item col-sm-12'><h5 class='myhr-heading colour-fade-in-out col-sm-12'><span>New Skills<span></h5></div>");
 	
 	display_skills(new_skillset);
 
-	$('#skill_list').append("<div class='skill-item col-sm-12'><h5 class='myhr-heading colour-fade-in-out col-sm-12'><span>Older Skills<span><h5></div>");
+	$('#skill_list').append("<div class='skill-item col-sm-12'><h5 class='myhr-heading colour-fade-in-out col-sm-12'><span>Older Skills<span></h5></div>");
 	
 	display_skills(old_skillset);
 	
