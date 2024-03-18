@@ -5,7 +5,7 @@ var new_skillset = {
 		'frequency':'Daily',
 		'duration_start':moment("2023-12-18"),
 		'duration_end':moment(),
-		'value':70
+		'value':80
 	}
 }
 
