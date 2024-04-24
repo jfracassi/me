@@ -6,6 +6,14 @@ var new_skillset = {
 		'duration_start':moment("2023-12-18"),
 		'duration_end':moment(),
 		'value':80
+	},
+	'react':{
+		'label':'React',
+		'status':'',
+		'frequency':'Daily',
+		'duration_start':moment("2024-04-04"),
+		'duration_end':moment(),
+		'value':45
 	}
 }
 
