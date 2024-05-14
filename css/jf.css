@@ -152,9 +152,6 @@ a:hover {
 	position: absolute;
 	top: 150%;
 	margin: 0px;
-	
-	/* border-style: solid; */
-	/* border-color: red; */
 }
 
 .main-bg {
@@ -168,9 +165,6 @@ a:hover {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 	width: 500px;
-	
-	/* border-style: solid; */
-	/* border-color: white; */
 }
 
 .main-landing {
@@ -183,16 +177,10 @@ a:hover {
 	-moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-	
-	/* border-style: solid; */
-	/* border-color: red; */
 }
 
 .main-name {
 	margin: 0px;
-	
-	/* border-style: solid; */
-	/* border-color: red; */
 }
 
 .main-photo {
@@ -245,9 +233,6 @@ a:hover {
 	margin: 0px;
 	font-size: 45pt;
 	font-family: 'Questrial', sans-serif;
-	
-	/* border-style: solid; */
-	/* border-color: cyan; */
 }
 
 .myname-first {
@@ -327,16 +312,11 @@ a:hover {
 
 .sub-info {
 	position: absolute;
-	/* top: 100%; */
 	margin: 0px;
-	
-	/* border-style: solid; */
-	/* border-color: magenta; */
 }
 
 .sticky {
 	position: fixed;
 	top: 110px;
 	z-index: 99;
-	/* width: 100%; */
 }
