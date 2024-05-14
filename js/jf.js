@@ -6,7 +6,7 @@ var new_skillset = {
 		'duration_start':moment("2024-04-23"),
 		'duration_end':moment(),
 		'value':90
-	}
+	},
 	'python':{
 		'label':'Python',
 		'status':'',
