@@ -12,7 +12,7 @@ var new_skillset = {
 		'status':'',
 		'frequency':'Daily',
 		'duration_start':moment("2023-12-18"),
-		'duration_end':moment(),
+		'duration_end':moment("2024-04-01"),
 		'value':50
 	},
 	'react':{
@@ -20,7 +20,7 @@ var new_skillset = {
 		'status':'',
 		'frequency':'Daily',
 		'duration_start':moment("2024-04-04"),
-		'duration_end':moment(),
+		'duration_end':moment("2024-04-20"),
 		'value':45
 	}
 }
