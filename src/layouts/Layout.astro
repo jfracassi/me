@@ -31,9 +31,7 @@ const { title = 'Jeremy Fracassi - Full Stack Developer' } = Astro.props;
     <!-- Theme init: runs before paint to avoid flash -->
     <script is:inline>
       (function () {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'light' || (!stored && !prefersDark)) {
+        if (localStorage.getItem('theme') === 'light') {
           document.documentElement.classList.add('light');
         }
       })();
