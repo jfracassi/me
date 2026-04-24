@@ -1,0 +1,110 @@
+---
+import ExperienceEntry from './ExperienceEntry.astro';
+import { experience, additionalExperience } from '../data/experience';
+---
+<section id="experience" class="section-row">
+  <div class="section-label">
+    <div class="section-label-inner">
+      <i class="fa-solid fa-briefcase section-icon icon-wobble"></i>
+      <span class="section-title">Experience</span>
+    </div>
+  </div>
+  <div class="section-content">
+    <button class="scroll-top-btn" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <div class="section-content-inner">
+
+      <!-- Single wrapper carries the one continuous vertical line -->
+      <div class="timeline-wrapper">
+        <ul class="timeline">
+          {experience.map(entry => <ExperienceEntry entry={entry} />)}
+        </ul>
+
+        <div id="more-entries" style="height:0;overflow:hidden;transition:height 0.5s ease;margin-left:-30px;padding-left:30px;">
+          <div class="more-entries-inner">
+            <ul class="timeline">
+              {additionalExperience.map(entry => <ExperienceEntry entry={entry} />)}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="more-controls">
+        <button id="btn-more" class="more-btn">More experience</button>
+        <button id="btn-less" class="more-btn" style="display:none">Less</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const btnMore = document.getElementById('btn-more')!;
+  const btnLess = document.getElementById('btn-less')!;
+  const moreEntries = document.getElementById('more-entries')!;
+  const inner = moreEntries.querySelector('.more-entries-inner') as HTMLElement;
+
+  btnMore.addEventListener('click', () => {
+    moreEntries.style.height = inner.scrollHeight + 'px';
+    btnMore.style.display = 'none';
+    btnLess.style.display = 'inline-flex';
+  });
+
+  btnLess.addEventListener('click', () => {
+    moreEntries.style.height = '0';
+    btnLess.style.display = 'none';
+    btnMore.style.display = 'inline-flex';
+  });
+</script>
+
+<style>
+  /* One wrapper, one continuous line */
+  .timeline-wrapper {
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 9px;   /* centers on the 14px dot: dot left = 30-27=3, center = 3+7=10, line center = 9+1=10 */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--timeline-line);
+    transition: background-color 0.5s ease;
+  }
+
+  :is(.section-row:hover, .section-row.nav-activated) .timeline-wrapper::before {
+    background-color: var(--border);
+  }
+
+  .timeline {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .more-controls {
+    margin-top: 20px;
+  }
+
+  .more-btn {
+    background: none;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .more-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+</style>

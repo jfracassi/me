@@ -1,0 +1,38 @@
+---
+---
+<section id="education" class="section-row">
+  <div class="section-label">
+    <div class="section-label-inner">
+      <i class="fa-solid fa-graduation-cap section-icon icon-wobble"></i>
+      <span class="section-title">Education</span>
+    </div>
+  </div>
+  <div class="section-content">
+    <button class="scroll-top-btn" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <div class="section-content-inner">
+      <h4 class="degree">Bachelor of Science, Computer Science</h4>
+      <p class="institution">Ryerson University &mdash; 2003</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .degree {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    transition: color 0.5s ease;
+  }
+
+  :is(.section-row:hover, .section-row.nav-activated) .degree {
+    color: var(--text-primary);
+  }
+
+  .institution {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    opacity: 0.8;
+  }
+</style>

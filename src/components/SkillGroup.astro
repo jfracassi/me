@@ -1,0 +1,67 @@
+---
+import type { Skill } from '../data/skills';
+
+interface Props {
+  title: string;
+  skills: Skill[];
+}
+
+const { title, skills } = Astro.props;
+---
+<div class="skill-group">
+  <h6 class="skill-group-title">{title}</h6>
+  <div class="skill-chips">
+    {skills.map(skill => (
+      <div class="skill-chip">
+        <span class="skill-name">{skill.label}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .skill-group {
+    margin-bottom: 36px;
+  }
+
+  .skill-group-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: color 0.5s ease, border-color 0.5s ease;
+  }
+
+
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill-chip {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background-color: var(--skill-chip-bg);
+    border: 1px solid var(--skill-chip-border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    min-width: 120px;
+    transition: border-color 0.5s ease, background-color 0.5s ease;
+  }
+
+
+  .skill-name {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    transition: color 0.5s ease;
+  }
+
+
+
+</style>

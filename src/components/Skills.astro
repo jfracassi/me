@@ -1,0 +1,49 @@
+---
+import SkillGroup from './SkillGroup.astro';
+import CoreSkillsGroup from './CoreSkillsGroup.astro';
+import {
+  backendSkills, frontendSkills, mobileSkills, infrastructureSkills,
+  toolsSkills, practiceSkills, additionalSkills, legacySkills
+} from '../data/skills';
+---
+<section id="skills" class="section-row alt">
+  <div class="section-label">
+    <div class="section-label-inner">
+      <span class="cog-stack section-icon">
+        <i class="fa-solid fa-gear fa-lg cog-fwd"></i>
+        <i class="fa-solid fa-gear fa-xs cog-rev"></i>
+      </span>
+      <span class="section-title">Skills</span>
+    </div>
+  </div>
+  <div class="section-content">
+    <button class="scroll-top-btn" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <div class="section-content-inner">
+      <CoreSkillsGroup title="Core Technologies" groups={[
+        { title: 'Backend',        skills: backendSkills },
+        { title: 'Frontend',       skills: frontendSkills },
+        { title: 'Mobile',         skills: mobileSkills },
+        { title: 'Infrastructure', skills: infrastructureSkills },
+        { title: 'Tools',          skills: toolsSkills },
+      ]} />
+      <SkillGroup title="Practices"    skills={practiceSkills} />
+      <SkillGroup title="Foundational" skills={additionalSkills} />
+      <SkillGroup title="Legacy"       skills={legacySkills} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .cog-stack {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 38px;
+    height: 28px;
+  }
+
+  .cog-stack .cog-fwd { position: absolute; left: 0; font-size: 1.75rem; }
+  .cog-stack .cog-rev { position: absolute; right: 0; bottom: 0; font-size: 1.1rem; }
+</style>
