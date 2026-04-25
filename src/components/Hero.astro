@@ -175,10 +175,17 @@ import mePhoto from '../assets/me.jpg';
       padding: 30px 20px 40px;
       align-items: center;
       justify-content: flex-start;
+      position: relative;
     }
     .name-first, .name-last { font-size: 2.5rem; }
     .hero-title { font-size: 1.25rem; }
     .hero-links { font-size: 0.75rem; }
-    .hero-location { text-align: center; }
+    .hero-location {
+      position: absolute;
+      bottom: 5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
   }
 </style>
