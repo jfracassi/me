@@ -1,0 +1,238 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - text: 
+    - list [ref=e3]:
+      - listitem [ref=e4]:
+        - link " Top" [ref=e5] [cursor=pointer]:
+          - /url: "#top"
+          - generic [ref=e6]: 
+          - generic [ref=e7]: Top
+      - listitem [ref=e8]:
+        - link " Intro" [ref=e9] [cursor=pointer]:
+          - /url: "#intro"
+          - generic [ref=e10]: 
+          - generic [ref=e11]: Intro
+      - listitem [ref=e12]:
+        - link "  Skills" [ref=e13] [cursor=pointer]:
+          - /url: "#skills"
+          - generic [ref=e14]:
+            - generic [ref=e15]: 
+            - generic [ref=e16]: 
+          - generic [ref=e17]: Skills
+      - listitem [ref=e18]:
+        - link " Experience" [ref=e19] [cursor=pointer]:
+          - /url: "#experience"
+          - generic [ref=e20]: 
+          - generic [ref=e21]: Experience
+      - listitem [ref=e22]:
+        - link " Projects" [ref=e23] [cursor=pointer]:
+          - /url: "#projects"
+          - generic [ref=e24]: 
+          - generic [ref=e25]: Projects
+      - listitem [ref=e26]:
+        - link " Education" [ref=e27] [cursor=pointer]:
+          - /url: "#education"
+          - generic [ref=e28]: 
+          - generic [ref=e29]: Education
+    - button "Toggle light/dark theme" [ref=e30] [cursor=pointer]:
+      - generic [ref=e31]: 
+      - text: 
+  - main [ref=e32]:
+    - generic [ref=e34]:
+      - img "Jeremy Fracassi" [ref=e36]
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - generic [ref=e39]: Jeremy
+          - generic [ref=e40]: Fracassi
+        - generic [ref=e41]:
+          - generic [ref=e42]: Full Stack Developer
+          - generic [ref=e43]:
+            - link "LinkedIn" [ref=e44] [cursor=pointer]:
+              - /url: https://ca.linkedin.com/in/jeremyfracassi
+              - generic [ref=e45]: 
+            - link "GitHub" [ref=e46] [cursor=pointer]:
+              - /url: https://github.com/jfracassi
+              - generic [ref=e47]: 
+        - generic [ref=e48]:
+          - generic [ref=e49]: 
+          - text: Ontario, Canada
+    - generic [ref=e50]:
+      - generic [ref=e52]:
+        - generic [ref=e53]: 
+        - generic [ref=e54]: Intro
+      - generic [ref=e55]:
+        - button "Scroll to top" [ref=e56] [cursor=pointer]:
+          - generic [ref=e57]: 
+        - generic [ref=e58]:
+          - heading "A Little About Me" [level=5] [ref=e59]
+          - paragraph [ref=e60]: I've always enjoyed creating. As a child, I made drawings (scribbles?) for anyone who would take them. As time went on, my skill with pencil and paper improved. In high school, I became interested in computer programming, attracted by the ability to create new things with new tools.
+          - paragraph [ref=e61]: "While I appreciate all formats of programming, I felt drawn to web development. I enjoy the complexity that comes with full stack development: designing a visually appealing front end, and designing a streamlined back end."
+          - paragraph [ref=e62]: Lately, I've been doing a lot of work with custom MES/ERP systems. Those artistic skills I developed turned out to be a good asset when it comes to making interfaces that people need to stare at through their work day. I take pride in my work and look for inspiration everywhere.
+          - paragraph [ref=e63]: I keep busy and pick up new skills along the way.
+          - paragraph [ref=e64]: I still draw from time to time.
+    - generic [ref=e65]:
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - generic [ref=e69]: 
+          - generic [ref=e70]: 
+        - generic [ref=e71]: Skills
+      - generic [ref=e72]:
+        - button "Scroll to top" [ref=e73] [cursor=pointer]:
+          - generic [ref=e74]: 
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - heading "Technical Skills" [level=6] [ref=e77]
+            - generic [ref=e78]:
+              - generic [ref=e80]: Blazor
+              - generic [ref=e82]: Bootstrap
+              - generic [ref=e84]: C#
+              - generic [ref=e86]: CodeIgniter
+              - generic [ref=e88]: CSS
+              - generic [ref=e90]: Flutter / Dart
+              - generic [ref=e92]: HTML
+              - generic [ref=e94]: JavaScript
+              - generic [ref=e96]: jQuery
+              - generic [ref=e98]: JSON / AJAX
+              - generic [ref=e100]: Linux / Unix
+              - generic [ref=e102]: Microsoft Power BI
+              - generic [ref=e104]: MySQL / MSSQL
+              - generic [ref=e106]: Perl
+              - generic [ref=e108]: PHP
+              - generic [ref=e110]: Python
+          - generic [ref=e111]:
+            - heading "Legacy" [level=6] [ref=e112]
+            - generic [ref=e113]:
+              - generic [ref=e115]: ASP
+              - generic [ref=e117]: C / C++
+              - generic [ref=e119]: Java
+              - generic [ref=e121]: MS Access
+              - generic [ref=e123]: Visual Basic
+    - generic [ref=e124]:
+      - generic [ref=e126]:
+        - generic [ref=e127]: 
+        - generic [ref=e128]: Experience
+      - generic [ref=e129]:
+        - button "Scroll to top" [ref=e130] [cursor=pointer]:
+          - generic [ref=e131]: 
+        - generic [ref=e132]:
+          - list [ref=e133]:
+            - listitem [ref=e134]:
+              - generic [ref=e136]:
+                - generic [ref=e137]:
+                  - text: November 2021 – December 2023 • PHP Developer
+                  - heading "WellnessLiving Systems Inc" [level=4] [ref=e138]
+                - generic [ref=e139]:
+                  - group [ref=e140]:
+                    - generic "▶ Summary" [ref=e141] [cursor=pointer]
+                    - list [ref=e142]:
+                      - listitem [ref=e143]: Developed core features for wellness platform serving 20M+ users, contributing to successful PE investment.
+                      - listitem [ref=e144]: Architected and implemented comprehensive analytics solution integrating Google Analytics and Meta Pixel, enabling businesses to track customer journey across main application and white-label platforms.
+                      - listitem [ref=e145]: Evaluated and integrated third-party image markup tool, implementing hierarchical image defaults (global / business-type / owner / staff) for specific feature functionality.
+                      - listitem [ref=e146]: Built reusable PHP modules and components focusing on performance and testability, while maintaining code quality through rigorous review processes.
+                      - listitem [ref=e147]: Collaborated with cross-functional teams to integrate frontend components and optimize data storage solutions.
+                  - group [ref=e148]:
+                    - generic "▶ Detailed" [ref=e149] [cursor=pointer]
+            - listitem [ref=e150]:
+              - generic [ref=e152]:
+                - generic [ref=e153]:
+                  - text: April 2010 – November 2021 • Senior Full Stack Developer
+                  - heading "Gardien Services Canada" [level=4] [ref=e154]
+                - generic [ref=e155]:
+                  - group [ref=e156]:
+                    - generic "▶ Summary" [ref=e157] [cursor=pointer]
+                    - list [ref=e158]:
+                      - listitem [ref=e159]: Served as primary developer for OnTrack, a critical LAMP-stack MES/ERP system supporting international circuit board QA operations.
+                      - listitem [ref=e160]: "OnTrack 1.0 (Sole Developer): Maintained and enhanced existing system; added multi-language support, job cycle-time tracking, automated PDF certificate generation, training management, calibration tracking, Perl file archiving scripts, and a CRM with automated follow-up workflows."
+                      - listitem [ref=e161]: "OnTrack 2.0 (Lead Developer): Led architectural redesign; implemented complete action logging, automated operator qualification enforcement, Bootstrap/jQuery/AJAX frontend rebuild, Power BI KPI integration, and CodeIgniter MVC migration."
+                  - group [ref=e162]:
+                    - generic "▶ Detailed" [ref=e163] [cursor=pointer]
+            - listitem [ref=e164]:
+              - generic [ref=e166]:
+                - generic [ref=e167]:
+                  - text: February 2005 – October 2009 • Full Stack Developer
+                  - heading "Coretec Inc" [level=4] [ref=e168]
+                - generic [ref=e169]:
+                  - group [ref=e170]:
+                    - generic "▶ Summary" [ref=e171] [cursor=pointer]
+                    - list [ref=e172]:
+                      - listitem [ref=e173]: Developed and maintained critical applications for circuit board manufacturing operations.
+                      - listitem [ref=e174]: Designed and implemented in-house solution replacing third-party system, eliminating $15K annual licensing costs.
+                      - listitem [ref=e175]: Developed and maintained various applications using Classic ASP, MSSQL, Perl, C#, and Delphi.
+                      - listitem [ref=e176]: Created real-time monitoring and support systems improving manufacturing efficiency.
+                      - listitem [ref=e177]: Streamlined Front End Engineering processes through custom application development.
+                  - group [ref=e178]:
+                    - generic "▶ Detailed" [ref=e179] [cursor=pointer]
+            - listitem [ref=e180]:
+              - generic [ref=e182]:
+                - generic [ref=e183]:
+                  - text: June 2003 – May 2004 • Software Developer
+                  - heading "Cyrion Solutions / The CableShoppe Canada" [level=4] [ref=e184]
+                - generic [ref=e185]:
+                  - group [ref=e186]:
+                    - generic "▶ Summary" [ref=e187] [cursor=pointer]
+                    - list [ref=e188]:
+                      - listitem [ref=e189]: Designed and implemented multi-threaded testing framework for cable TV set-top boxes.
+                      - listitem [ref=e190]: Created diagnostic utilities improving quality control processes.
+                      - listitem [ref=e191]: Developed automated software loading systems increasing operational efficiency.
+                  - group [ref=e192]:
+                    - generic "▶ Detailed" [ref=e193] [cursor=pointer]
+          - list [ref=e196]:
+            - listitem [ref=e197]:
+              - generic [ref=e199]:
+                - generic [ref=e200]:
+                  - text: Summer 2001 • Signature Service Business Technician
+                  - heading "Bell Canada" [level=4] [ref=e201]
+                - list [ref=e203]:
+                  - listitem [ref=e204]: Bell Mobility module and IBM module data trouble call center — provided front line support to business customers experiencing technical difficulties and kept the customer up to date with progress reports.
+                  - listitem [ref=e205]: Weekend Dispatcher — assigned and dispatched field technicians to jobs during off-duty hours and logged progress resolution in the trouble ticket.
+            - listitem [ref=e206]:
+              - generic [ref=e208]:
+                - generic [ref=e209]:
+                  - text: Summer 2000 • ATM Operations Center Business Technician
+                  - heading "Bell Canada" [level=4] [ref=e210]
+                - list [ref=e212]:
+                  - listitem [ref=e213]: ATM provisioning — provisioned NewBridge and Cisco switches, Cisco routers, and turned up ATM soft circuits.
+                  - listitem [ref=e214]: Hyperstream Testboard Controller — managed high volume of incoming calls to the Hyperstream Test Center.
+            - listitem [ref=e215]:
+              - generic [ref=e217]:
+                - generic [ref=e218]:
+                  - text: Summer 1999 • Extended Help Desk Business Technician
+                  - heading "Bell Canada" [level=4] [ref=e219]
+                - list [ref=e221]:
+                  - listitem [ref=e222]: Provided front line support to business customers experiencing technical difficulties and kept the customer up to date with progress reports during off hours.
+          - button "More experience" [ref=e224]
+    - generic [ref=e225]:
+      - generic [ref=e227]:
+        - generic [ref=e228]: 
+        - generic [ref=e229]: Projects
+      - generic [ref=e230]:
+        - button "Scroll to top" [ref=e231] [cursor=pointer]:
+          - generic [ref=e232]: 
+        - generic [ref=e234]:
+          - generic [ref=e235]: 
+          - paragraph [ref=e236]: Projects coming soon.
+    - generic [ref=e237]:
+      - generic [ref=e239]:
+        - generic [ref=e240]: 
+        - generic [ref=e241]: Education
+      - generic [ref=e242]:
+        - button "Scroll to top" [ref=e243] [cursor=pointer]:
+          - generic [ref=e244]: 
+        - generic [ref=e245]:
+          - heading "Bachelor of Science, Computer Science" [level=4] [ref=e246]
+          - paragraph [ref=e247]: Ryerson University — 2003
+  - generic [ref=e250]:
+    - button "Menu" [ref=e251]:
+      - img [ref=e253]
+      - generic: Menu
+    - button "Inspect" [ref=e257]:
+      - img [ref=e259]
+      - generic: Inspect
+    - button "Audit" [ref=e261]:
+      - generic [ref=e262]:
+        - img [ref=e263]
+        - img [ref=e266]
+      - generic: Audit
+    - button "Settings" [ref=e269]:
+      - img [ref=e271]
+      - generic: Settings
