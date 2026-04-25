@@ -1,0 +1,134 @@
+---
+import { projects } from '../data/projects';
+---
+<section id="projects" class="section-row alt">
+  <div class="section-label">
+    <div class="section-label-inner">
+      <i class="fa-solid fa-diagram-project section-icon icon-wobble"></i>
+      <span class="section-title">Projects</span>
+    </div>
+  </div>
+  <div class="section-content">
+    <button class="scroll-top-btn" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <div class="section-content-inner">
+      {projects.length === 0 ? (
+        <div class="empty-state">
+          <i class="fa-regular fa-folder-open empty-icon"></i>
+          <p>Projects coming soon.</p>
+        </div>
+      ) : (
+        <div class="project-grid">
+          {projects.map(project => (
+            <div class="project-card">
+              <h4 class="project-title">{project.title}</h4>
+              {project.description && <p class="project-desc">{project.description}</p>}
+              <div class="project-tags">
+                {project.tags.map(tag => <span class="project-tag">{tag}</span>)}
+              </div>
+              <div class="project-links">
+                {project.url && <a href={project.url} target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>}
+                {project.repo && <a href={project.repo} target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 48px 0;
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  .empty-icon {
+    font-size: 3rem;
+  }
+
+  .empty-state p {
+    font-size: 0.95rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 20px;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.5s ease;
+  }
+
+  :is(.section-row:hover, .section-row.nav-activated) .project-card { border-color: var(--border); }
+
+  .project-title {
+    font-size: 1rem;
+    color: var(--text-primary);
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .project-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background-color: var(--skill-chip-bg);
+    border: 1px solid var(--skill-chip-border);
+    color: var(--text-muted);
+  }
+
+  .project-links {
+    display: flex;
+    gap: 12px;
+  }
+
+  .project-links a {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .project-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .section-content {
+      position: relative;
+    }
+    .scroll-top-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      float: none;
+      margin: 0;
+    }
+  }
+</style>

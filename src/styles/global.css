@@ -1,0 +1,312 @@
+/* ============================================================
+   CSS Custom Properties — Dark theme (default)
+   ============================================================ */
+:root {
+  --bg-primary:   #2d2c29;
+  --bg-secondary: #2b2a27;
+  --bg-tertiary:  #292825;
+  --text-primary: #ffffff;
+  --text-muted:   #aaaaaa;
+  --accent:       #ffb600;
+  --border:       #aaaaaa;
+  --border-subtle:#444440;
+  --scrollbar-thumb: #ffb600;
+  --scrollbar-track: #2b2a27;
+  --skill-chip-bg: #3a3935;
+  --skill-chip-border: #555550;
+  --timeline-line: #aaaaaa;
+  --nav-bg: #2b2a27;
+}
+
+/* Light theme overrides */
+html.light {
+  --bg-primary:   #f0ede5;
+  --bg-secondary: #e8e5dd;
+  --bg-tertiary:  #e0ddd5;
+  --text-primary: #2b2a27;
+  --text-muted:   #6b6a67;
+  --accent:       #d49a00;
+  --border:       #c8c5bd;
+  --border-subtle:#d0cdc5;
+  --scrollbar-thumb: #d49a00;
+  --scrollbar-track: #e8e5dd;
+  --skill-chip-bg: #dedad2;
+  --skill-chip-border: #c0bdb5;
+  --timeline-line: #c8c5bd;
+  --nav-bg: #e8e5dd;
+}
+
+/* ============================================================
+   Base Reset & Globals
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar         { width: 0.5em; }
+html::-webkit-scrollbar-track   { background: var(--scrollbar-track); }
+html::-webkit-scrollbar-thumb   { background-color: var(--scrollbar-thumb); outline: 1px solid var(--bg-primary); }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-muted);
+  font-family: 'Questrial', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--text-primary);
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================================================
+   Section Layout — split column (icon-label left / content right)
+   ============================================================ */
+.section-row {
+  display: flex;
+  flex-wrap: wrap;
+  scroll-margin-top: 54px;
+}
+
+.section-label {
+  width: 33.333%;
+  min-width: 200px;
+  background-color: var(--bg-secondary);
+  padding: 60px 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+.section-label-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 70px;
+}
+
+.section-icon {
+  color: var(--text-muted);
+  font-size: 1.75rem;
+  transition: color 0.5s ease;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-left: 2px solid var(--text-muted);
+  padding-left: 12px;
+  transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.section-content {
+  flex: 1;
+  background-color: var(--bg-primary);
+  padding: 60px 60px 60px 50px;
+  transition: background-color 0.3s ease;
+}
+
+.section-content-inner {
+  max-width: 680px;
+}
+
+/* Section hover effects */
+:is(.section-row:hover, .section-row.nav-activated) .section-title {
+  color: var(--accent);
+  border-color: var(--text-primary);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .section-icon {
+  color: var(--text-primary);
+}
+
+/* Alternating secondary bg on label and content */
+.section-row.alt .section-label {
+  background-color: var(--bg-tertiary);
+}
+.section-row.alt .section-content {
+  background-color: var(--bg-secondary);
+}
+
+/* scroll-to-top arrow */
+.scroll-top-btn {
+  float: right;
+  position: relative;
+  z-index: 10;
+  color: var(--text-muted);
+  background-color: var(--bg-primary);
+  border: none;
+  border-top: 2px solid var(--text-muted);
+  cursor: pointer;
+  padding: 1px 4px 4px;
+  font-size: 0.85rem;
+  transition: color 0.2s ease, border-top-color 0.2s ease, background-color 0.5s ease;
+  margin-top: -10px;
+  margin-bottom: 16px;
+}
+
+.section-row.alt .scroll-top-btn {
+  background-color: var(--bg-secondary);
+}
+.scroll-top-btn:hover {
+  color: var(--accent);
+  border-top-color: var(--accent);
+}
+
+@keyframes arrow-bounce {
+  0%   { transform: translateY(0); }
+  28%  { transform: translateY(5px); }
+  52%  { transform: translateY(0); }
+  70%  { transform: translateY(2px); }
+  86%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+.scroll-top-btn:hover i { animation: arrow-bounce 0.55s ease forwards; }
+
+:is(.section-row:hover, .section-row.nav-activated) .scroll-top-btn:not(:hover) {
+  color: var(--text-primary);
+  border-top-color: var(--text-primary);
+}
+
+/* Skills — cross-component hover rules */
+:is(.section-row:hover, .section-row.nav-activated) .skill-group-title {
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .core-label {
+  color: var(--text-primary);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .skill-chip {
+  border-color: var(--border);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .skill-name {
+  color: var(--text-primary);
+}
+
+/* Experience timeline — cross-component hover rules */
+:is(.section-row:hover, .section-row.nav-activated) .timeline-period {
+  color: var(--text-primary);
+  opacity: 1;
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .timeline-company {
+  color: var(--text-primary);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .timeline-dot {
+  background-color: var(--accent);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .timeline-card {
+  border-color: var(--border);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .timeline-card::before {
+  border-right-color: var(--border);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .timeline-card::after {
+  border-right-color: var(--bg-secondary);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .exp-list li {
+  color: var(--text-primary);
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .exp-tab.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: inherit;
+}
+
+:is(.section-row:hover, .section-row.nav-activated) .timeline-wrapper::before {
+  background-color: var(--border);
+}
+
+/* ============================================================
+   Animations
+   ============================================================ */
+@keyframes slideUpFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wobble {
+  10%, 90% { transform: rotate(10deg); }
+  20%, 80% { transform: rotate(-10deg); }
+  30%, 50%, 70% { transform: rotate(15deg); }
+  40%, 60% { transform: rotate(-15deg); }
+}
+
+@keyframes spin-fwd {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes spin-rev {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+.anim-slide { opacity: 0; }
+.anim-slide.visible {
+  animation: slideUpFadeIn 0.5s ease forwards;
+}
+
+/* Cog spin on section hover */
+:is(.section-row:hover, .section-row.nav-activated) .cog-fwd { animation: spin-fwd 3s linear infinite; }
+:is(.section-row:hover, .section-row.nav-activated) .cog-rev { animation: spin-rev 4s linear infinite; }
+
+/* Icon wobble on section hover */
+:is(.section-row:hover, .section-row.nav-activated) .icon-wobble { animation: wobble 0.8s ease; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+  .section-label {
+    width: 100%;
+    justify-content: center;
+    padding: 30px 20px;
+    border-bottom: 2px solid var(--border-subtle);
+  }
+
+  .section-label-inner {
+    position: static;
+  }
+
+  .section-content {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .section-content-inner {
+    max-width: 100%;
+  }
+}

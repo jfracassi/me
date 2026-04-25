@@ -1,0 +1,212 @@
+---
+import type { ExperienceEntry } from '../data/experience';
+
+interface Props {
+  entry: ExperienceEntry;
+}
+
+const { entry } = Astro.props;
+const hasBoth = entry.detailed.length > 0;
+---
+<li class="timeline-item">
+  <div class="timeline-dot"></div>
+  <div class="timeline-card">
+    <div class="timeline-header">
+      <small class="timeline-period">{entry.period} &bull; {entry.role}</small>
+      <h4 class="timeline-company">{entry.company}</h4>
+    </div>
+    <div class="timeline-body">
+      {hasBoth ? (
+        <>
+          <div class="exp-tabs">
+            <button class="exp-tab active" data-panel="summary">Summary</button>
+            <button class="exp-tab" data-panel="detailed">Detailed</button>
+          </div>
+          <div class="exp-panel exp-panel--summary">
+            <ul class="exp-list">
+              {entry.summary.map(item => <li>{item}</li>)}
+            </ul>
+          </div>
+          <div class="exp-panel exp-panel--detailed" style="height:0;overflow:hidden;">
+            <ul class="exp-list">
+              {entry.detailed.map(item => <li>{item}</li>)}
+            </ul>
+          </div>
+        </>
+      ) : (
+        <ul class="exp-list">
+          {entry.summary.map(item => <li>{item}</li>)}
+        </ul>
+      )}
+    </div>
+  </div>
+</li>
+
+<script>
+  document.querySelectorAll('.timeline-card').forEach(card => {
+    const tabs = card.querySelectorAll<HTMLButtonElement>('.exp-tab');
+    const panels = card.querySelectorAll<HTMLElement>('.exp-panel');
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        if (tab.classList.contains('active')) return;
+
+        const targetName = tab.dataset.panel!;
+        const target  = card.querySelector<HTMLElement>(`.exp-panel--${targetName}`)!;
+        const current = card.querySelector<HTMLElement>('.exp-panel:not([style*="height:0"]):not([style*="height: 0"])')
+                     || card.querySelector<HTMLElement>('.exp-panel--summary');
+
+        if (target === current) return;
+
+        // Collapse current: pin its height then animate to 0
+        current!.style.height = current!.scrollHeight + 'px';
+        current!.style.overflow = 'hidden';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          current!.style.transition = 'height 0.35s ease';
+          current!.style.height = '0';
+        }));
+
+        // Expand target: measure content height and animate up
+        target.style.height = '0';
+        target.style.overflow = 'hidden';
+        target.style.transition = 'height 0.35s ease';
+        const targetHeight = target.scrollHeight;
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          target.style.height = targetHeight + 'px';
+        }));
+        target.addEventListener('transitionend', () => {
+          target.style.height = 'auto';
+        }, { once: true });
+
+        // Swap active tab
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  });
+</script>
+
+<style>
+  .timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -27px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--timeline-line);
+    transition: background-color 0.5s ease;
+    z-index: 1;
+  }
+
+  .timeline-card {
+    position: relative;
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 16px 20px;
+    background-color: var(--bg-secondary);
+    transition: border-color 0.5s ease, background-color 0.5s ease;
+  }
+
+  .timeline-card::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--border-subtle);
+    transition: border-right-color 0.5s ease;
+  }
+
+  .timeline-card::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: -6px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid var(--bg-secondary);
+    transition: border-right-color 0.5s ease;
+  }
+
+  .timeline-period {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.85;
+    transition: color 0.5s ease, opacity 0.5s ease;
+  }
+
+  .timeline-company {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    transition: color 0.5s ease;
+  }
+
+  .timeline-body {
+    margin-top: 14px;
+  }
+
+  /* Tab toggle */
+  .exp-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .exp-tab {
+    background: none;
+    border: 1px solid var(--border-subtle);
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .exp-tab:hover {
+    color: var(--text-primary);
+    border-color: var(--border);
+  }
+
+  .exp-tab.active {
+    color: var(--text-muted);
+    border-color: var(--border);
+    font-weight: 600;
+    background-color: transparent;
+  }
+
+  .exp-panel {
+    transition: height 0.35s ease;
+    overflow: hidden;
+  }
+
+  .exp-list {
+    list-style: disc;
+    padding-left: 20px;
+    padding-bottom: 4px;
+  }
+
+  .exp-list li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 6px;
+    transition: color 0.5s ease;
+  }
+</style>

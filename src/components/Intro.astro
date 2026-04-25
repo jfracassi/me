@@ -1,0 +1,59 @@
+---
+---
+<section id="intro" class="section-row">
+  <div class="section-label">
+    <div class="section-label-inner">
+      <i class="fa-solid fa-circle-info section-icon icon-wobble"></i>
+      <span class="section-title">Intro</span>
+    </div>
+  </div>
+  <div class="section-content">
+    <button class="scroll-top-btn" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <div class="section-content-inner">
+      <h5 class="content-heading">A Little About Me</h5>
+      <p>
+        I've always enjoyed creating. As a child, I made drawings (scribbles?) for anyone who would take them.
+        As time went on, my skill with pencil and paper improved. In high school, I became interested in computer
+        programming, attracted by the ability to create new things with new tools.
+      </p>
+      <p>
+        Over 20 years later, I still get the same satisfaction from building things. I'm drawn to the complexity
+        of full-stack development — the craft of designing interfaces people enjoy using, and the architecture of
+        systems that hold up under real-world pressure. Lately, much of that work has been custom MES/ERP systems,
+        where those old artistic instincts turn out to be surprisingly useful.
+      </p>
+      <p>
+        I take the mentoring side of senior development seriously too. There's something genuinely rewarding about
+        helping a junior developer click with a concept they've been wrestling with.
+      </p>
+      <p>I keep busy and pick up new skills along the way.</p>
+      <p>I still draw from time to time.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .content-heading {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    transition: color 0.5s ease;
+  }
+
+  :is(.section-row:hover, .section-row.nav-activated) .content-heading {
+    color: var(--text-primary);
+  }
+
+  p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 14px;
+    transition: color 0.5s ease;
+  }
+
+  :is(.section-row:hover, .section-row.nav-activated) p {
+    color: var(--text-primary);
+  }
+</style>

@@ -1,0 +1,192 @@
+---
+import { Image } from 'astro:assets';
+import mePhoto from '../assets/me.jpg';
+---
+<section id="top" class="hero">
+  <div class="hero-photo-col">
+    <Image
+      src={mePhoto}
+      alt="Jeremy Fracassi"
+      width={240}
+      height={240}
+      class="hero-photo anim-slide"
+      style="animation-delay: 0s"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="hero-info">
+    <div class="hero-content">
+      <div class="hero-name">
+        <span class="name-first anim-slide" style="animation-delay: 0.3s">Jeremy</span>
+        <span class="name-last  anim-slide" style="animation-delay: 0.5s">Fracassi</span>
+      </div>
+      <div class="hero-sub anim-slide" style="animation-delay: 0.7s">
+        <span class="hero-title">Full Stack Developer</span>
+        <div class="hero-links">
+          <a href="https://ca.linkedin.com/in/jeremyfracassi" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin fa-2x"></i>
+          </a>
+          <a href="https://github.com/jfracassi" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-square-github fa-2x"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-location anim-slide" style="animation-delay: 0.9s">
+        <i class="fa-solid fa-location-dot"></i> Ontario, Canada
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.anim-slide').forEach(el => {
+      el.classList.add('visible');
+    });
+  });
+</script>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding-top: 54px;
+  }
+
+  .hero-photo-col {
+    width: 33.333%;
+    min-width: 200px;
+    background-color: var(--bg-secondary);
+    padding: 60px 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: background-color 0.5s ease;
+  }
+
+  .hero-photo {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--border);
+    transition: border-color 0.5s ease;
+  }
+
+  .hero-info {
+    flex: 1;
+    background-color: var(--bg-primary);
+    padding: 60px 60px 60px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-name {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  .name-first {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    color: var(--text-primary);
+    font-family: 'Questrial', sans-serif;
+  }
+
+  .name-last {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    color: var(--accent);
+    font-family: 'Questrial', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .hero-sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .hero-title {
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: var(--text-muted);
+    font-family: 'Questrial', sans-serif;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 5px;
+  }
+
+  .hero-links a {
+    color: var(--text-muted);
+    transition: color 0.5s ease;
+  }
+
+  .hero-links a:hover {
+    color: var(--text-primary);
+  }
+
+  .hero-location {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .anim-slide {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .anim-slide.visible {
+    animation: slideUpFadeIn 0.5s ease forwards;
+  }
+
+  @keyframes slideUpFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .hero { flex-direction: column; }
+    .hero-photo-col {
+      width: 100%;
+      flex: 0 0 40vh;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .hero-photo {
+      width: 220px;
+      height: 220px;
+    }
+    .hero-info {
+      width: 100%;
+      flex: 1;
+      padding: 30px 20px 40px;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+    }
+    .name-first, .name-last { font-size: 2.5rem; }
+    .hero-title { font-size: 1.25rem; }
+    .hero-links { font-size: 0.75rem; }
+    .hero-location {
+      position: absolute;
+      bottom: 5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  }
+</style>
