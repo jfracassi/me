@@ -79,8 +79,11 @@ import { projects } from '../data/projects';
 
   .project-title {
     font-size: 1rem;
-    color: var(--text-primary);
+    color: var(--text-muted);
+    transition: color 0.5s ease;
   }
+
+  :is(.section-row:hover, .section-row.nav-activated) .project-title { color: var(--text-primary); }
 
   .project-desc {
     font-size: 0.88rem;

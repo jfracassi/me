@@ -7,9 +7,10 @@ export interface Skill {
 
 export const backendSkills: Skill[] = [
   { label: 'CodeIgniter',     start: '2013-01', end: '2021-11', frequency: 'Daily' },
-  { label: 'Firebase',        start: '2024-04', end: 'present', frequency: 'Daily' },
+  { label: 'Firebase',        start: '2024-04', end: '2026-06', frequency: 'Daily' },
   { label: 'MySQL / MSSQL',   start: '2005-02', end: '2023-12', frequency: 'Daily' },
   { label: 'PHP',             start: '2010-04', end: '2023-12', frequency: 'Daily' },
+  { label: 'Supabase',        start: '2026-06', end: 'present', frequency: 'Daily' },
 ];
 
 export const frontendSkills: Skill[] = [
